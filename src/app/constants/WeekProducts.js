@@ -1,18 +1,18 @@
-import image1 from "../../../public/images/OlightAllImage/1HomePage/5.png";
-import image2 from "../../../public/images/OlightAllImage/1HomePage/6.jpg";
-import image3 from "../../../public/images/OlightAllImage/1HomePage/7.jpg";
-import image4 from "../../../public/images/OlightAllImage/1HomePage/8.jpg";
-import image5 from "../../../public/images/OlightAllImage/1HomePage/9.jpg";
-import image6 from "../../../public/images/OlightAllImage/1HomePage/10.jpg";
+import image1 from "../../../public/images/OlightAllImage/1HomePage/15.jpg";
+import image2 from "../../../public/images/OlightAllImage/1HomePage/16.jpg";
+import image3 from "../../../public/images/OlightAllImage/1HomePage/17.jpg";
+import image4 from "../../../public/images/OlightAllImage/1HomePage/18.jpg";
+import image5 from "../../../public/images/OlightAllImage/1HomePage/19.jpg";
+import image6 from "../../../public/images/OlightAllImage/1HomePage/20.jpg";
 
-export const products = [
+export const Products = [
   {
     id: 1,
     title: "Aluminum Earrings",
     category: "Earrings",
     rating: "4.9 ★★★★★",
     price: "11,125",
-    img: image1, 
+    img: image1, // ✅ no curly braces
   },
   {
     id: 2,
