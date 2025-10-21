@@ -1,14 +1,14 @@
 import Button from "@/app/Components/common/Button";
 import Image from "next/image";
-import React from "react";
-
+import futureImage1 from "../../../../../../public/images/OlightAllImage/1HomePage/2.png";
+import futureImage2 from "../../../../../../public/images/OlightAllImage/1HomePage/3.png";
 export default function FutureCard() {
   return (
     <section className="grid md:grid-cols-2 bg-base-200">
       {/* Card 1 */}
       <div className="relative h-[300px] overflow-hidden">
         <Image
-          src="/images/BennerImage/pendant.jpg"
+          src={futureImage1}
           alt="Heart Pendant"
           fill
           className="object-cover scale-105 hover:scale-110 transition duration-500"
@@ -27,11 +27,10 @@ export default function FutureCard() {
           <Button variant="white" />
         </div>
       </div>
-
       {/* Card 2 */}
       <div className="relative h-[300px] overflow-hidden">
         <Image
-          src="/images/BennerImage/image3.jpg"
+          src={futureImage2}
           alt="Engagement Rings"
           fill
           className="object-cover scale-105 hover:scale-110 transition duration-500"
@@ -48,6 +47,7 @@ export default function FutureCard() {
           </p>
           <Button variant="white" />
         </div>
+
       </div>
     </section>
   );

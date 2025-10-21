@@ -7,7 +7,7 @@ export default function BannerContent() {
         purely hand-crafted
       </p>
 
-      <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 leading-tight">
+      <h1 className="text-3xl sm:text-4xl md:text-6xl  mb-4 leading-tight">
         Charm For <br className="hidden sm:block" /> Your Everyday
       </h1>
       <p className="text-base sm:text-lg md:text-xl mb-6 leading-relaxed">
