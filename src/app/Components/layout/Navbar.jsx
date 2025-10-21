@@ -1,8 +1,6 @@
 "use client";
 import { useState } from "react";
-
 import { NAV_LINKS } from "@/app/constants/navLink";
-
 import NavLink from "../common/NavLink";
 import RiteIcon from "./Components/RiteIcon";
 import CenterLogo from "./Components/CenterLogo";
