@@ -1,5 +1,5 @@
+import Button from "@/app/Components/common/Button";
 import React from "react";
-import Button from "../common/Button";
 export default function BannerContent() {
   return (
     <div className="relative z-10 text-center md:text-left px-6 sm:px-10 md:ml-20 max-w-xl text-white">

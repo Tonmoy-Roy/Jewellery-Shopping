@@ -7,7 +7,7 @@ export default function BannerImage() {
       alt="Hero Banner"
       fill
       priority
-      className="object-cover"
+      className="object-cover "
     />
   );
 }
