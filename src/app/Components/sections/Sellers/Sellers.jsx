@@ -7,7 +7,7 @@ import SellersHeader from "./Components/SellersHeader";
 
 export default function WeekProducts() {
   return (
-    <main className="w-full bg-base-100 text-center py-10">
+    <main className="w-full bg-base-100 text-center">
       <SellersHeader />
 
       {/* ===== PRODUCTS GRID ===== */}

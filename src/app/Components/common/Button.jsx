@@ -6,18 +6,21 @@ export default function Button({
   type = "button",
   onClick,
   variant = "outline",
+  black = "outline"
 }) {
   const baseStyle =
     "rounded-xl font-semibold px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 lg:px-8 lg:py-3.5 transition-all";
 
   const variantStyle =
     variant === "white" ? "bg-white text-black hover:bg-gray-100" : "outline";
+  const blackStyle =
+    black === "black" ? "bg-black text-white " : "outline";
 
   return (
-    <button
+    <button 
       type={type}
       onClick={onClick}
-      className={`${baseStyle} ${variantStyle}`}
+      className={`${baseStyle} ${variantStyle}  ${blackStyle}`}
     >
       {children}
     </button>

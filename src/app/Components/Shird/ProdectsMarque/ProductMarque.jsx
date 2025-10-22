@@ -9,7 +9,7 @@ import MarqueLIst from "./MarqueLIst";
 
 export default function ProductMarque() {
   return (
-    <section className="">
+    <section className="lg:my-8 md:my-6 my-4">
       <Marquee
         gradient={false}
         speed={60}
