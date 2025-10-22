@@ -15,6 +15,7 @@ export default function Card({product}) {
         <p className=" text-sm sm:text-base">{product.rating}</p>
         <Button variant="white" />
       </div>
+      
     </div>
   );
 }

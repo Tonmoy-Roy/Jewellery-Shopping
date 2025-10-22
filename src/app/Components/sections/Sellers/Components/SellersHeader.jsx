@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function SellersHeader() {
+export default function   SellersHeader() {
   return (
     <div>
       <section className="py-10 px-4">

@@ -5,14 +5,14 @@ export default function ProductsCard({ product }) {
   return (
     <>
       {/* Image container */}
-      <div className="relative w-36 h-36 mx-auto mt-4">
-        <Image
-          src={product.img}
-          alt={product.title}
-          fill
-          className="object-contain rounded-xl"
-        />
-      </div>
+      <div className="relative w-full aspect-square mx-auto mt-4">
+  <Image
+    src={product.img}
+    alt={product.title}
+    fill
+    className="object-contain rounded-xl"
+  />
+</div>
       {/* Card body */}
       <div className="p-4 text-center">
         <h2 className="text-sm font-medium text-gray-500">

@@ -1,8 +1,13 @@
-import React from 'react'
-import LuxuryCard from './Components/LuxuryCard'
+import React from "react";
+import LuxuryCard from "./Components/LuxuryCard";
+import ProductMarque from "../../Shird/ProdectsMarque/ProductMarque";
+
 
 export default function LuxuryNecklace() {
   return (
-    <div><LuxuryCard/></div>
-  )
+    <div>
+      <LuxuryCard />
+      <ProductMarque/>
+    </div>
+  );
 }
