@@ -72,7 +72,69 @@ const PRODUCTS = [
     reviews: 27,
     price: 4200.00
   },
-  // add more demo products...
+  {
+    id: 10,
+    name: "Aquamarine Halo Ring",
+    category: "Jewellery",
+    image: "/images/products/jewellery10.jpg",
+    rating: 5,
+    reviews: 39,
+    price: 1780.00
+  },
+  {
+    id: 11,
+    name: "Garnet Teardrop Earrings",
+    category: "Jewellery",
+    image: "/images/products/jewellery11.jpg",
+    rating: 4,
+    reviews: 22,
+    price: 410.00
+  },
+  {
+    id: 12,
+    name: "Moonstone Layered Necklace",
+    category: "Jewellery",
+    image: "/images/products/jewellery12.jpg",
+    rating: 5,
+    reviews: 48,
+    price: 520.00
+  },
+  {
+    id: 13,
+    name: "Citrine Cocktail Ring",
+    category: "Jewellery",
+    image: "/images/products/jewellery13.jpg",
+    rating: 4,
+    reviews: 35,
+    price: 890.00
+  },
+  {
+    id: 14,
+    name: "Tanzanite Stud Earrings",
+    category: "Jewellery",
+    image: "/images/products/jewellery14.jpg",
+    rating: 5,
+    reviews: 29,
+    price: 1350.00
+  },
+  {
+    id: 15,
+    name: "Black Onyx Cuff Bracelet",
+    category: "Jewellery",
+    image: "/images/products/jewellery15.jpg",
+    rating: 4,
+    reviews: 41,
+    price: 680.00
+  },
+  {
+    id: 16,
+    name: "Peridot Pendant Necklace",
+    category: "Jewellery",
+    image: "/images/products/jewellery16.jpg",
+    rating: 5,
+    reviews: 33,
+    price: 720.00
+  }
 ];
 
 export default PRODUCTS;
