@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import ProductCard from "../Components/common/ProductCard";
 import Coverimg from "../Components/common/Coverimg";
 import PRODUCTS from "../constants/data";
@@ -8,17 +8,19 @@ import { BsGrid3X3Gap } from "react-icons/bs";
 
 
 export default function ShopPage() {
-  const [priceRange, setPriceRange] = useState([100, 7000]);
+  const [priceRange, setPriceRange] = useState([100, 7000]); // actual applied filter
+  const [tempRange, setTempRange] = useState([100, 7000]);
+  const [activeThumb, setActiveThumb] = useState(null); // 'min' | 'max' | null
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOption, setSortOption] = useState("default");
   const [selectedCategory, setSelectedCategory] = useState(null);
 
   // Filter products based on search term
   const filteredProducts = PRODUCTS.filter((p) => {
-  const matchCategory = selectedCategory ? p.category === selectedCategory : true;
-  const matchSearch = p.name.toLowerCase().includes(searchTerm.toLowerCase());
-  return matchCategory && matchSearch && p.price >= priceRange[0] && p.price <= priceRange[1];
-});
+    const matchCategory = selectedCategory ? p.category === selectedCategory : true;
+    const matchSearch = p.name.toLowerCase().includes(searchTerm.toLowerCase());
+    return matchCategory && matchSearch && p.price >= priceRange[0] && p.price <= priceRange[1];
+  });
 
 
   const sortedProducts = [...filteredProducts].sort((a, b) => {
@@ -26,6 +28,58 @@ export default function ShopPage() {
     if (sortOption === "highToLow") return b.price - a.price;
     return 0; // default (no sorting)
   });
+
+  // Ensure activeThumb is cleared when pointer/mouse/touch is released anywhere
+  useEffect(() => {
+    const clear = () => setActiveThumb(null);
+    window.addEventListener("mouseup", clear);
+    window.addEventListener("touchend", clear);
+    window.addEventListener("pointerup", clear);
+    return () => {
+      window.removeEventListener("mouseup", clear);
+      window.removeEventListener("touchend", clear);
+      window.removeEventListener("pointerup", clear);
+    };
+  }, []);
+  const sliderRef = useRef(null);
+
+  const clientXToValue = (clientX) => {
+    const rect = sliderRef.current?.getBoundingClientRect();
+    if (!rect) return tempRange[0];
+    const x = Math.min(Math.max(clientX - rect.left, 0), rect.width);
+    const percent = x / rect.width;
+    const value = Math.round(100 + percent * (7000 - 100));
+    return value;
+  };
+
+  const handlePointerDownOnTrack = (e) => {
+    const clientX = e.clientX ?? (e.touches && e.touches[0] && e.touches[0].clientX);
+    if (clientX == null) return;
+    const value = clientXToValue(clientX);
+    const distMin = Math.abs(value - tempRange[0]);
+    const distMax = Math.abs(value - tempRange[1]);
+    const thumb = distMin <= distMax ? "min" : "max";
+    setActiveThumb(thumb);
+    if (thumb === "min") {
+      setTempRange([Math.min(value, tempRange[1] - 100), tempRange[1]]);
+    } else {
+      setTempRange([tempRange[0], Math.max(value, tempRange[0] + 100)]);
+    }
+    // prevent default so inputs below don't steal focus in some browsers
+    e.preventDefault();
+  };
+
+  const handlePointerMoveOnTrack = (e) => {
+    if (!activeThumb) return;
+    const clientX = e.clientX ?? (e.touches && e.touches[0] && e.touches[0].clientX);
+    if (clientX == null) return;
+    const value = clientXToValue(clientX);
+    if (activeThumb === "min") {
+      setTempRange([Math.min(value, tempRange[1] - 100), tempRange[1]]);
+    } else {
+      setTempRange([tempRange[0], Math.max(value, tempRange[0] + 100)]);
+    }
+  };
 
   const categoryCountss = CATEGORIES.map((category) => {
     const count = PRODUCTS.filter(
@@ -82,23 +136,75 @@ export default function ShopPage() {
           {/* Price Filter */}
           <div className="mb-6">
             <h3 className="font-semibold mb-3">Filter by Price</h3>
-            <input
-              type="range"
-              min="100"
-              max="7000"
-              value={priceRange[1]}
-              className="w-full accent-black"
-              onChange={(e) => setPriceRange([100, Number(e.target.value)])}
-            />
-            <div className="flex justify-between">
-              <p className="text-sm mt-2">
-                Price: <span className=" text-amber-600">{priceRange[0]}$ - {priceRange[1]}$</span>
+
+            <div
+              ref={sliderRef}
+              className="relative h-6 mt-4 mb-2"
+              onPointerDown={handlePointerDownOnTrack}
+              onPointerMove={handlePointerMoveOnTrack}
+            >
+              {/* Track background */}
+              <div className="absolute w-full h-1 bg-gray-300 rounded-full"></div>
+
+              {/* Range highlight between min and max */}
+              <div
+                className="absolute h-1 rounded-full"
+                style={{
+                  left: `${(tempRange[0] / 7000) * 100}%`,
+                  right: `${100 - (tempRange[1] / 7000) * 100}%`,
+                }}
+              ></div>
+
+              {/* Min slider */}
+              <input
+                type="range"
+                min="100"
+                max="7000"
+                value={tempRange[0]}
+                onChange={(e) =>
+                  setTempRange([Math.min(Number(e.target.value), tempRange[1] - 100), tempRange[1]])
+                }
+                className="absolute w-full accent-black"
+                onMouseDown={() => setActiveThumb('min')}
+                onPointerDown={() => setActiveThumb('min')}
+                onTouchStart={() => setActiveThumb('min')}
+                style={{ WebkitAppearance: "none", appearance: "none", zIndex: activeThumb === 'min' ? 3 : 2 }}
+              />
+
+              {/* Max slider */}
+              <input
+                type="range"
+                min="100"
+                max="7000"
+                value={tempRange[1]}
+                onChange={(e) =>
+                  setTempRange([tempRange[0], Math.max(Number(e.target.value), tempRange[0] + 100)])
+                }
+                className="absolute w-full accent-black"
+                onMouseDown={() => setActiveThumb('max')}
+                onPointerDown={() => setActiveThumb('max')}
+                onTouchStart={() => setActiveThumb('max')}
+                style={{ WebkitAppearance: "none", appearance: "none", zIndex: activeThumb === 'max' ? 3 : 2 }}
+              />
+            </div>
+
+            <div className="flex justify-between items-center mt-3">
+              <p className="text-sm">
+                Price:{" "}
+                <span className="text-amber-600 font-semibold">
+                  {tempRange[0]}$ - {tempRange[1]}$
+                </span>
               </p>
-              <button className="btn bg-black text-white py-2 px-4 rounded-2xl ">
+              <button
+                onClick={() => setPriceRange(tempRange)} // ✅ only apply on click
+                className="bg-black text-white py-2 px-4 rounded-2xl"
+              >
                 Filter
               </button>
             </div>
           </div>
+
+
 
           <div className="divider"></div>
 

@@ -1,2 +1,72 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+/* Range slider styling: cross-browser
+	 - Styles both single and dual-range inputs used in the sidebar filter
+	 - WebKit (Chrome, Safari) and Gecko (Firefox) rules included
+*/
+
+input[type="range"] {
+	-webkit-appearance: none;
+	appearance: none;
+	height: 24px; /* give some vertical space for thumb */
+	background: transparent; /* track handled separately */
+}
+
+/* WebKit track */
+input[type="range"]::-webkit-slider-runnable-track {
+	height: 6px;
+	background: transparent; /* we'll use our own track elements */
+	border-radius: 9999px;
+}
+
+/* WebKit thumb */
+input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	width: 18px;
+	height: 18px;
+	background: #111827; /* gray-900 */
+	border-radius: 50%;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+	border: 3px solid #fff; /* white ring to separate from track */
+	margin-top: -6px; /* vertically center the thumb over a 6px track */
+	cursor: pointer;
+}
+
+/* Gecko (Firefox) track */
+input[type="range"]::-moz-range-track {
+	height: 6px;
+	background: transparent;
+	border-radius: 9999px;
+}
+
+/* Gecko thumb */
+input[type="range"]::-moz-range-thumb {
+	width: 18px;
+	height: 18px;
+	background: #111827;
+	border-radius: 50%;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+	border: 3px solid #fff;
+	cursor: pointer;
+}
+
+/* Focus styles for accessibility */
+input[type="range"]:focus {
+	outline: none;
+}
+input[type="range"]:focus::-webkit-slider-thumb {
+	box-shadow: 0 0 0 4px rgba(59,130,246,0.2); /* blue-500 ring */
+}
+input[type="range"]:focus::-moz-range-thumb {
+	box-shadow: 0 0 0 4px rgba(59,130,246,0.2);
+}
+
+/* Optional: visually hide native tracks when using custom track elements */
+input[type="range"].hide-track::-webkit-slider-runnable-track {
+	background: transparent;
+}
+input[type="range"].hide-track::-moz-range-track {
+	background: transparent;
+}
+
