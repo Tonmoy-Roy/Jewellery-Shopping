@@ -5,6 +5,7 @@ import Coverimg from "../Components/common/Coverimg";
 import PRODUCTS from "../constants/data";
 import CATEGORIES from "../constants/categories";
 import { BsGrid3X3Gap } from "react-icons/bs";
+import Footer from "../Components/common/Footer";
 
 
 export default function ShopPage() {
@@ -297,6 +298,9 @@ export default function ShopPage() {
           )}
         </main>
       </div>
+
+      <Footer></Footer>
+
     </section>
   );
 }
