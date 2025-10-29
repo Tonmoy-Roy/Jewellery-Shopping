@@ -19,10 +19,10 @@
     {
       name: "Categories",
       path: "/categories",
-      // submenu: [
-      //   { name: "Submenu 1", path: "/categories/submenu-1" },
-      //   { name: "Submenu 2", path: "/categories/submenu-2" },
-      // ],
+      submenu: [
+        { name: "Submenu 1", path: "/categories/submenu-1" },
+        { name: "Submenu 2", path: "/categories/submenu-2" },
+      ],
     },
     {
       name: "Products",

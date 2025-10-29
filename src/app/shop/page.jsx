@@ -8,18 +8,31 @@ import { BsGrid3X3Gap } from "react-icons/bs";
 
 
 export default function ShopPage() {
-  const [priceRange, setPriceRange] = useState([100, 5000]);
+  const [priceRange, setPriceRange] = useState([100, 7000]);
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOption, setSortOption] = useState("default");
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
   // Filter products based on search term
-  const filteredProducts = PRODUCTS.filter((product) =>
-    product.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredProducts = PRODUCTS.filter((p) => {
+  const matchCategory = selectedCategory ? p.category === selectedCategory : true;
+  const matchSearch = p.name.toLowerCase().includes(searchTerm.toLowerCase());
+  return matchCategory && matchSearch && p.price >= priceRange[0] && p.price <= priceRange[1];
+});
+
+
   const sortedProducts = [...filteredProducts].sort((a, b) => {
     if (sortOption === "lowToHigh") return a.price - b.price;
     if (sortOption === "highToLow") return b.price - a.price;
     return 0; // default (no sorting)
+  });
+
+  const categoryCountss = CATEGORIES.map((category) => {
+    const count = PRODUCTS.filter(
+      (product) => product.category === category
+    ).length;
+
+    return { name: category, count };
   });
 
   return (
@@ -49,20 +62,21 @@ export default function ShopPage() {
           <div className="mb-6">
             <h3 className="font-semibold mb-3">Categories</h3>
             <ul className="space-y-2">
-              {CATEGORIES.map((cat) => (
-                <li key={cat.name} className="text-gray-700 hover:text-(--primary)">
+              {categoryCountss.map((cat) => (
+                <li
+                  key={cat.name}
+                  className="text-gray-700 hover:text-(--primary) cursor-pointer"
+                  onClick={() => setSelectedCategory(cat.name)}
+                >
                   <div className="flex justify-between">
-                    <div>
-                      {cat.name}
-                    </div>
-                    <div>
-                      ({cat.count})
-                    </div>
+                    <div>{cat.name}</div>
+                    <div>({cat.count})</div>
                   </div>
                 </li>
               ))}
             </ul>
           </div>
+
           <div className="divider"></div>
 
           {/* Price Filter */}
@@ -71,7 +85,7 @@ export default function ShopPage() {
             <input
               type="range"
               min="100"
-              max="5000"
+              max="7000"
               value={priceRange[1]}
               className="w-full accent-black"
               onChange={(e) => setPriceRange([100, Number(e.target.value)])}
