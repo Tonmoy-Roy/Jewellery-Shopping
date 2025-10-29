@@ -76,7 +76,7 @@ const PRODUCTS = [
     id: 10,
     name: "Aquamarine Halo Ring",
     category: "Jewellery",
-    image: "/images/products/jewellery10.jpg",
+    image: "/images/OlightAllImage/2ShopPage/2.jpg",
     rating: 5,
     reviews: 39,
     price: 1780.00
@@ -85,7 +85,7 @@ const PRODUCTS = [
     id: 11,
     name: "Garnet Teardrop Earrings",
     category: "Jewellery",
-    image: "/images/products/jewellery11.jpg",
+    image: "/images/OlightAllImage/2ShopPage/2.jpg",
     rating: 4,
     reviews: 22,
     price: 410.00
@@ -94,7 +94,7 @@ const PRODUCTS = [
     id: 12,
     name: "Moonstone Layered Necklace",
     category: "Jewellery",
-    image: "/images/products/jewellery12.jpg",
+    image: "/images/OlightAllImage/2ShopPage/3.jpg",
     rating: 5,
     reviews: 48,
     price: 520.00
@@ -103,7 +103,7 @@ const PRODUCTS = [
     id: 13,
     name: "Citrine Cocktail Ring",
     category: "Jewellery",
-    image: "/images/products/jewellery13.jpg",
+    image: "/images/OlightAllImage/2ShopPage/4.jpg",
     rating: 4,
     reviews: 35,
     price: 890.00
@@ -112,7 +112,7 @@ const PRODUCTS = [
     id: 14,
     name: "Tanzanite Stud Earrings",
     category: "Jewellery",
-    image: "/images/products/jewellery14.jpg",
+    image: "/images/OlightAllImage/2ShopPage/5.jpg",
     rating: 5,
     reviews: 29,
     price: 1350.00
@@ -121,7 +121,7 @@ const PRODUCTS = [
     id: 15,
     name: "Black Onyx Cuff Bracelet",
     category: "Jewellery",
-    image: "/images/products/jewellery15.jpg",
+    image: "/images/OlightAllImage/2ShopPage/6.jpg",
     rating: 4,
     reviews: 41,
     price: 680.00
@@ -130,7 +130,7 @@ const PRODUCTS = [
     id: 16,
     name: "Peridot Pendant Necklace",
     category: "Jewellery",
-    image: "/images/products/jewellery16.jpg",
+    image: "/images/OlightAllImage/2ShopPage/7.jpg",
     rating: 5,
     reviews: 33,
     price: 720.00

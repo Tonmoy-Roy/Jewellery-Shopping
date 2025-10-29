@@ -4,9 +4,24 @@ import ProductCard from "../Components/common/ProductCard";
 import Coverimg from "../Components/common/Coverimg";
 import PRODUCTS from "../constants/data";
 import CATEGORIES from "../constants/categories";
+import { BsGrid3X3Gap } from "react-icons/bs";
+
 
 export default function ShopPage() {
   const [priceRange, setPriceRange] = useState([100, 5000]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [sortOption, setSortOption] = useState("default");
+
+
+  // Filter products based on search term
+  const filteredProducts = PRODUCTS.filter((product) =>
+    product.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  const sortedProducts = [...filteredProducts].sort((a, b) => {
+    if (sortOption === "lowToHigh") return a.price - b.price;
+    if (sortOption === "highToLow") return b.price - a.price;
+    return 0; // default (no sorting)
+  });
 
   return (
     <section className="flex flex-col gap-8 px-6 md:px-12 py-8 bg-(--background)">
@@ -16,6 +31,7 @@ export default function ShopPage() {
           imagePath="/images/OlightAllImage/3CategoriesPage/1.jpg"
           title="Shop"
           breadcrumb="HOME PAGE ➜ SHOP"
+
         />
       </div>
 
@@ -26,7 +42,9 @@ export default function ShopPage() {
           <input
             type="text"
             placeholder="Search products..."
-            className="w-full mb-5 p-2 border rounded-md"
+            className="w-full mb-5 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
           />
 
           {/* Categories */}
@@ -35,7 +53,14 @@ export default function ShopPage() {
             <ul className="space-y-2">
               {CATEGORIES.map((cat) => (
                 <li key={cat.name} className="text-gray-700 hover:text-(--primary)">
-                  {cat.name} ({cat.count})
+                  <div className="flex justify-between">
+                    <div>
+                      {cat.name}
+                    </div>
+                    <div>
+                      ({cat.count})
+                    </div>
+                  </div>
                 </li>
               ))}
             </ul>
@@ -124,23 +149,34 @@ export default function ShopPage() {
         {/* 🔹 Product Grid */}
         <main className="flex-1">
           <div className="flex justify-between items-center mb-6">
-            <p>Showing 1-9 of {PRODUCTS.length} results</p>
+            <div className="flex">
+              <BsGrid3X3Gap className="text-2xl mr-3 ml-10" />
+              <p>Showing 1-9 of {PRODUCTS.length} results</p>
+            </div>
             <div className="flex items-center gap-4">
-              <select className="border rounded-md p-2">
-                <option>Default sorting</option>
-                <option>Price: Low to High</option>
-                <option>Price: High to Low</option>
+              <select
+                className="border rounded-md p-2 w-full md:w-auto"
+                value={sortOption}
+                onChange={(e) => setSortOption(e.target.value)}
+              >
+                <option value="default">Default sorting</option>
+                <option value="lowToHigh">Price: Low to High</option>
+                <option value="highToLow">Price: High to Low</option>
               </select>
               <p>Show 4</p>
             </div>
           </div>
 
           {/* Products */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
-            {PRODUCTS.slice(0, 9).map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
+          {sortedProducts.length > 0 ? (
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+              {sortedProducts.slice(0, 9).map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+          ) : (
+            <p className="text-center text-gray-500 mt-10">No products found.</p>
+          )}
         </main>
       </div>
     </section>
