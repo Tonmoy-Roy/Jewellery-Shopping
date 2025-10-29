@@ -12,7 +12,6 @@ export default function ShopPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOption, setSortOption] = useState("default");
 
-
   // Filter products based on search term
   const filteredProducts = PRODUCTS.filter((product) =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -24,14 +23,13 @@ export default function ShopPage() {
   });
 
   return (
-    <section className="flex flex-col gap-8 px-6 md:px-12 py-8 bg-(--background)">
+    <section className="flex flex-col gap-8 px-6 md:px-12 bg-(--background)">
       {/* 🔹 Page Header */}
-      <div className="text-center py-12 bg-(--primary-light) rounded-2xl">
+      <div className="w-screen relative left-1/2 -ml-[51vw] ">
         <Coverimg
           imagePath="/images/OlightAllImage/3CategoriesPage/1.jpg"
           title="Shop"
           breadcrumb="HOME PAGE ➜ SHOP"
-
         />
       </div>
 
@@ -75,7 +73,7 @@ export default function ShopPage() {
               min="100"
               max="5000"
               value={priceRange[1]}
-              className="w-full"
+              className="w-full accent-black"
               onChange={(e) => setPriceRange([100, Number(e.target.value)])}
             />
             <div className="flex justify-between">

@@ -4,7 +4,7 @@ import Image from 'next/image';
 const Coverimg = ({ imagePath, title, breadcrumb }) => {
     return (
         <div>
-            <section className="relative w-full h-[60vh] flex items-center justify-center bg-gray-200 overflow-hidden">
+            <section className="relative w-full h-[45vh] flex items-center justify-center bg-gray-200 overflow-hidden">
                 <Image
                     src={imagePath}
                     alt={title}
