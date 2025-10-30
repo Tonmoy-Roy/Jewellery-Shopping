@@ -5,7 +5,7 @@ import Coverimg from "../Components/common/Coverimg";
 import PRODUCTS from "../constants/data";
 import CATEGORIES from "../constants/categories";
 import { BsGrid3X3Gap } from "react-icons/bs";
-import Footer from "../Components/common/Footer";
+import Footer from "../Components/layout/Footer";
 
 
 export default function ShopPage() {
@@ -15,6 +15,11 @@ export default function ShopPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOption, setSortOption] = useState("default");
   const [selectedCategory, setSelectedCategory] = useState(null);
+
+  const [selectedCarat, setSelectedCarat] = useState(null);
+  const [displayedProducts, setDisplayedProducts] = useState(PRODUCTS);
+  const [filteredBrands, setFilteredBrands] = useState([]);
+  const [selectedBrand, setSelectedBrand] = useState(null);
 
   // Filter products based on search term
   const filteredProducts = PRODUCTS.filter((p) => {
@@ -198,7 +203,7 @@ export default function ShopPage() {
               </p>
               <button
                 onClick={() => setPriceRange(tempRange)} // ✅ only apply on click
-                className="bg-black text-white py-2 px-4 rounded-2xl"
+                className="bg-black text-white py-2 px-4 rounded-2xl cursor-pointer"
               >
                 Filter
               </button>
@@ -214,13 +219,44 @@ export default function ShopPage() {
           <div className="mb-6">
             <h3 className="font-semibold mb-3">Carats</h3>
             <ul className="space-y-2">
-              {["14kt", "18kt", "22kt", "24kt"].map((b) => (
-                <li key={b}>
-                  <input type="radio" name="options" className="mr-2" /> {b}
-                </li>
-              ))}
+              {["14kt", "18kt", "22kt", "24kt"].map((carat) => {
+                const count = PRODUCTS.filter((p) => p.carats === carat).length;
+                return (
+                  <li key={carat} className="flex justify-between items-center">
+                    <label className="flex items-center cursor-pointer">
+                      <input
+                        type="radio"
+                        name="carat"
+                        value={carat}
+                        className="mr-2 accent-black"
+                        onChange={() => {
+                          // 1️⃣ Update selected carat
+                          setSelectedCarat(carat);
+
+                          // 2️⃣ Filter products by selected carat
+                          const filteredByCarat = PRODUCTS.filter(
+                            (p) => p.carats === carat
+                          );
+                          setDisplayedProducts(filteredByCarat);
+
+                          // 3️⃣ Update available brands for this carat
+                          const availableBrands = [
+                            ...new Set(filteredByCarat.map((p) => p.brand)),
+                          ];
+                          setFilteredBrands(availableBrands);
+                        }}
+                      />
+                      {carat}
+                    </label>
+                    <span className="text-sm text-gray-500">({count})</span>
+                  </li>
+                );
+              })}
             </ul>
           </div>
+
+
+
           <div className="divider"></div>
 
 
@@ -228,13 +264,32 @@ export default function ShopPage() {
           <div className="mb-6">
             <h3 className="font-semibold mb-3">Brands</h3>
             <ul className="space-y-2">
-              {["Ariel", "Gordon", "Lizzie", "Mejuri", "Mandiler"].map((b) => (
-                <li key={b}>
-                  <input type="radio" name="options" className="mr-2" /> {b}
-                </li>
-              ))}
+              {(filteredBrands.length > 0
+                ? filteredBrands
+                : ["Ariel", "Gordon", "Lizzie", "Mejuri", "Mandiler"]
+              ).map((brand) => {
+                const count = PRODUCTS.filter((p) => p.brand === brand).length;
+                return (
+                  <li key={brand} className="flex justify-between items-center">
+                    <label className="flex items-center cursor-pointer">
+                      <input
+                        type="radio"
+                        name="brand"
+                        value={brand}
+                        className="mr-2 accent-black"
+                        onChange={(e) => setSelectedBrand(e.target.value)}
+                      />
+                      {brand}
+                    </label>
+                    <span className="text-sm text-gray-500">({count})</span>
+                  </li>
+                );
+              })}
             </ul>
           </div>
+
+
+
           <div className="divider"></div>
 
 
