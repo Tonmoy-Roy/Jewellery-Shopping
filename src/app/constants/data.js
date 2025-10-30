@@ -265,39 +265,9 @@ const PRODUCTS = [
     reviews: 41,
     price: 4800.00
   },
-  {
-    id: 26,
-    category: "Diamonds",
-    name: "Marquise Diamond Pendant",
-    brand: "MarquiseLux",
-    carats: "18kt",
-    image: "/images/OlightAllImage/2ShopPage/9.jpg",
-    rating: 5,
-    reviews: 36,
-    price: 2150.00
-  },
-  {
-    id: 27,
-    category: "Diamonds",
-    name: "Three-Stone Diamond Ring",
-    brand: "TrinityGlow",
-    carats: "14kt",
-    image: "/images/OlightAllImage/2ShopPage/5.jpg",
-    rating: 5,
-    reviews: 49,
-    price: 5900.00
-  },
-  {
-    id: 28,
-    category: "Diamonds",
-    name: "Diamond Cross Necklace",
-    brand: "FaithSpark",
-    carats: "18kt",
-    image: "/images/OlightAllImage/2ShopPage/7.jpg",
-    rating: 4,
-    reviews: 30,
-    price: 1850.00
-  },
+  
+  
+  
   {
     id: 29,
     category: "Diamonds",
@@ -309,28 +279,7 @@ const PRODUCTS = [
     reviews: 27,
     price: 4200.00
   },
-  {
-    id: 30,
-    category: "Diamonds",
-    name: "Round Brilliant Drop Earrings",
-    brand: "BrillDrop",
-    carats: "14kt",
-    image: "/images/OlightAllImage/2ShopPage/8.jpg",
-    rating: 5,
-    reviews: 58,
-    price: 2900.00
-  },
-  {
-    id: 31,
-    category: "Earrings",
-    name: "Hoop Earrings with Charms",
-    brand: "CharmHoop",
-    carats: "18kt",
-    image: "/images/OlightAllImage/2ShopPage/4.jpg",
-    rating: 4,
-    reviews: 66,
-    price: 130.00
-  },
+  
   {
     id: 32,
     category: "Earrings",
@@ -364,28 +313,8 @@ const PRODUCTS = [
     reviews: 45,
     price: 160.00
   },
-  {
-    id: 35,
-    category: "Earrings",
-    name: "Geometric Gold Earrings",
-    brand: "GeoGold",
-    carats: "14kt",
-    image: "/images/OlightAllImage/2ShopPage/5.jpg",
-    rating: 5,
-    reviews: 37,
-    price: 195.00
-  },
-  {
-    id: 36,
-    category: "Earrings",
-    name: "Emerald Cluster Earrings",
-    brand: "EmeraldBloom",
-    carats: "18kt",
-    image: "/images/OlightAllImage/2ShopPage/7.jpg",
-    rating: 4,
-    reviews: 31,
-    price: 380.00
-  },
+  
+ 
   {
     id: 37,
     category: "Earrings",
@@ -441,17 +370,7 @@ const PRODUCTS = [
     reviews: 28,
     price: 1200.00
   },
-  {
-    id: 42,
-    category: "Gift Sets",
-    name: "Birthstone Bracelet & Ring",
-    brand: "BirthGlow",
-    carats: "14kt",
-    image: "/images/OlightAllImage/2ShopPage/9.jpg",
-    rating: 4,
-    reviews: 35,
-    price: 210.00
-  },
+  
   {
     id: 43,
     category: "Gift Sets",
@@ -485,17 +404,7 @@ const PRODUCTS = [
     reviews: 36,
     price: 280.00
   },
-  {
-    id: 46,
-    category: "Pearls",
-    name: "Tahitian Black Pearl Ring",
-    brand: "TahitianNoir",
-    carats: "18kt",
-    image: "/images/OlightAllImage/2ShopPage/8.jpg",
-    rating: 4,
-    reviews: 29,
-    price: 620.00
-  },
+  
   {
     id: 47,
     category: "Pearls",
@@ -518,39 +427,9 @@ const PRODUCTS = [
     reviews: 33,
     price: 410.00
   },
-  {
-    id: 49,
-    category: "Rings",
-    name: "Vintage Sapphire Ring",
-    brand: "VintageBlue",
-    carats: "14kt",
-    image: "/images/OlightAllImage/2ShopPage/2.jpg",
-    rating: 5,
-    reviews: 46,
-    price: 1350.00
-  },
-  {
-    id: 50,
-    category: "Rings",
-    name: "Stackable Gemstone Rings",
-    brand: "StackGem",
-    carats: "18kt",
-    image: "/images/OlightAllImage/2ShopPage/9.jpg",
-    rating: 4,
-    reviews: 59,
-    price: 220.00
-  },
-  {
-    id: 51,
-    category: "Rings",
-    name: "Rose Gold Signet Ring",
-    brand: "RoseSignet",
-    carats: "14kt",
-    image: "/images/OlightAllImage/2ShopPage/5.jpg",
-    rating: 5,
-    reviews: 40,
-    price: 380.00
-  },
+  
+ 
+  
   {
     id: 52,
     category: "Rings",
@@ -573,17 +452,7 @@ const PRODUCTS = [
     reviews: 55,
     price: 2900.00
   },
-  {
-    id: 54,
-    category: "Wedding",
-    name: "His & Hers Wedding Bands",
-    brand: "EternalPair",
-    carats: "18kt",
-    image: "/images/OlightAllImage/2ShopPage/8.jpg",
-    rating: 5,
-    reviews: 68,
-    price: 1800.00
-  },
+  
   {
     id: 55,
     category: "Wedding",
@@ -595,17 +464,7 @@ const PRODUCTS = [
     reviews: 44,
     price: 5200.00
   },
-  {
-    id: 56,
-    category: "Wedding",
-    name: "Vintage Lace Bridal Set",
-    brand: "LaceLegacy",
-    carats: "14kt",
-    image: "/images/OlightAllImage/2ShopPage/6.jpg",
-    rating: 5,
-    reviews: 37,
-    price: 3400.00
-  },
+  
   {
     id: 57,
     category: "Wedding",
@@ -628,17 +487,7 @@ const PRODUCTS = [
     reviews: 41,
     price: 620.00
   },
-  {
-    id: 59,
-    category: "Wedding",
-    name: "Custom Engraved Ring Pair",
-    brand: "ForeverEngraved",
-    carats: "18kt",
-    image: "/images/OlightAllImage/2ShopPage/5.jpg",
-    rating: 5,
-    reviews: 53,
-    price: 950.00
-  },
+ 
   {
     id: 60,
     category: "Wedding",
@@ -649,17 +498,6 @@ const PRODUCTS = [
     rating: 5,
     reviews: 35,
     price: 2150.00
-  },
-  {
-    id: 61,
-    category: "Wedding",
-    name: "Rose Gold Bridal Earrings",
-    brand: "RoseBride",
-    carats: "14kt",
-    image: "/images/OlightAllImage/2ShopPage/3.jpg",
-    rating: 5,
-    reviews: 39,
-    price: 480.00
   },
   {
     id: 62,
@@ -705,17 +543,6 @@ const PRODUCTS = [
     reviews: 33,
     price: 210.00
   },
-  {
-    id: 66,
-    category: "Wedding",
-    name: "Eternity Diamond Anklet",
-    brand: "EternalAnklet",
-    carats: "18kt",
-    image: "/images/OlightAllImage/2ShopPage/9.jpg",
-    rating: 5,
-    reviews: 29,
-    price: 890.00
-  }
 ];
 
 export default PRODUCTS;

@@ -221,6 +221,7 @@ export default function ShopPage() {
             <ul className="space-y-2">
               {["14kt", "18kt", "22kt", "24kt"].map((carat) => {
                 const count = PRODUCTS.filter((p) => p.carats === carat).length;
+
                 return (
                   <li key={carat} className="flex justify-between items-center">
                     <label className="flex items-center cursor-pointer">
@@ -229,17 +230,16 @@ export default function ShopPage() {
                         name="carat"
                         value={carat}
                         className="mr-2 accent-black"
+                        checked={selectedCarat === carat}
                         onChange={() => {
-                          // 1️⃣ Update selected carat
                           setSelectedCarat(carat);
+                          setSelectedBrand(null); // reset brand
 
-                          // 2️⃣ Filter products by selected carat
                           const filteredByCarat = PRODUCTS.filter(
                             (p) => p.carats === carat
                           );
                           setDisplayedProducts(filteredByCarat);
 
-                          // 3️⃣ Update available brands for this carat
                           const availableBrands = [
                             ...new Set(filteredByCarat.map((p) => p.brand)),
                           ];
@@ -257,6 +257,7 @@ export default function ShopPage() {
 
 
 
+
           <div className="divider"></div>
 
 
@@ -268,7 +269,13 @@ export default function ShopPage() {
                 ? filteredBrands
                 : ["Ariel", "Gordon", "Lizzie", "Mejuri", "Mandiler"]
               ).map((brand) => {
-                const count = PRODUCTS.filter((p) => p.brand === brand).length;
+                const count = PRODUCTS.filter((p) => {
+                  if (selectedCarat) {
+                    return p.brand === brand && p.carats === selectedCarat;
+                  }
+                  return p.brand === brand;
+                }).length;
+
                 return (
                   <li key={brand} className="flex justify-between items-center">
                     <label className="flex items-center cursor-pointer">
@@ -277,7 +284,25 @@ export default function ShopPage() {
                         name="brand"
                         value={brand}
                         className="mr-2 accent-black"
-                        onChange={(e) => setSelectedBrand(e.target.value)}
+                        checked={selectedBrand === brand}
+                        onChange={() => {
+                          setSelectedBrand(brand);
+
+                          let filtered = PRODUCTS;
+
+                          // If a carat is selected, filter by it first
+                          if (selectedCarat) {
+                            filtered = filtered.filter(
+                              (p) => p.carats === selectedCarat
+                            );
+                          }
+
+                          // Then filter by the selected brand
+                          filtered = filtered.filter((p) => p.brand === brand);
+
+                          // Update main product UI
+                          setDisplayedProducts(filtered);
+                        }}
                       />
                       {brand}
                     </label>
@@ -344,9 +369,10 @@ export default function ShopPage() {
           {/* Products */}
           {sortedProducts.length > 0 ? (
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
-              {sortedProducts.slice(0, 9).map((product) => (
+              {displayedProducts.slice(0, 9).map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
+
             </div>
           ) : (
             <p className="text-center text-gray-500 mt-10">No products found.</p>
