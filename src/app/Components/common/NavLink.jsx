@@ -17,7 +17,8 @@ const NavLink = ({
     <Link
       href={href}
       onClick={onClick}
-      className={`${className} ${isActive ? activeClass : ""}`}
+      className={`${className} ${isActive ? activeClass : ""}`.trim()}
+      suppressHydrationWarning
     >
       {children}
     </Link>

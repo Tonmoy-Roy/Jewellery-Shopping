@@ -98,9 +98,9 @@ export default function ShopPage() {
   });
 
   return (
-    <section className="flex flex-col gap-8 px-6 md:px-12 bg-(--background)">
+    <section className="md:px-15">
       {/* 🔹 Page Header */}
-      <div className="w-screen relative left-1/2 -ml-[51vw] ">
+      <div className="w-screen relative left-1/2 -ml-[51vw] mb-20">
         <Coverimg
           imagePath="/images/OlightAllImage/3CategoriesPage/1.jpg"
           title="Shop"
@@ -205,7 +205,7 @@ export default function ShopPage() {
               </p>
               <button
                 onClick={() => setPriceRange(tempRange)} // ✅ only apply on click
-                className="bg-black text-white py-2 px-4 rounded-2xl cursor-pointer"
+                className="btn bg-black text-white py-2 px-4 rounded"
               >
                 Filter
               </button>
