@@ -22,18 +22,20 @@ export default function ShopPage() {
   const [selectedBrand, setSelectedBrand] = useState(null);
 
   // Filter products based on search term
-  const filteredProducts = PRODUCTS.filter((p) => {
+  const filteredAndSortedProducts = PRODUCTS.filter((p) => {
     const matchCategory = selectedCategory ? p.category === selectedCategory : true;
     const matchSearch = p.name.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchCategory && matchSearch && p.price >= priceRange[0] && p.price <= priceRange[1];
-  });
+    const matchPrice = p.price >= priceRange[0] && p.price <= priceRange[1];
+    const matchCarat = selectedCarat ? p.carats === selectedCarat : true;
+    const matchBrand = selectedBrand ? p.brand === selectedBrand : true;
 
-
-  const sortedProducts = [...filteredProducts].sort((a, b) => {
+    return matchCategory && matchSearch && matchPrice && matchCarat && matchBrand;
+  }).sort((a, b) => {
     if (sortOption === "lowToHigh") return a.price - b.price;
     if (sortOption === "highToLow") return b.price - a.price;
-    return 0; // default (no sorting)
+    return 0; // default
   });
+
 
   // Ensure activeThumb is cleared when pointer/mouse/touch is released anywhere
   useEffect(() => {
@@ -367,16 +369,16 @@ export default function ShopPage() {
           </div>
 
           {/* Products */}
-          {sortedProducts.length > 0 ? (
+          {filteredAndSortedProducts.length > 0 ? (
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
-              {displayedProducts.slice(0, 9).map((product) => (
+              {filteredAndSortedProducts.slice(0, 9).map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
-
             </div>
           ) : (
             <p className="text-center text-gray-500 mt-10">No products found.</p>
           )}
+
         </main>
       </div>
 
