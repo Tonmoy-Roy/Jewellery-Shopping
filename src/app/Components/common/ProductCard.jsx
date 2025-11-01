@@ -5,13 +5,13 @@ import Link from "next/link";
 
 export default function ProductCard({ product }) {
   return (
-    <div className="rounded-2xl p-4 bg-white hover:shadow-lg transition text-center">
+    <div className="bg-white text-center ">
       <Image
         src={product.image}
         alt={product.name}
         width={250}
         height={250}
-        className="rounded-xl mx-auto"
+        className="rounded-xl md:w-[21vw]"
       />
       <p className="text-sm text-gray-500 mt-3">{product.category}</p>
       <h3 className="font-semibold text-(--textDark) mt-1">{product.name}</h3>

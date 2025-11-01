@@ -110,12 +110,12 @@ export default function ShopPage() {
 
       <div className="flex flex-col md:flex-row gap-10">
         {/* 🔹 Sidebar Filters */}
-        <aside className="w-full md:w-1/4 border border-(--border) rounded-2xl p-5 bg-white">
+        <aside className="w-full md:w-1/4 rounded-2xl p-5">
           {/* Search */}
           <input
             type="text"
             placeholder="Search products..."
-            className="w-full mb-5 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full mb-5 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-100"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
@@ -349,9 +349,9 @@ export default function ShopPage() {
 
         {/* 🔹 Product Grid */}
         <main className="flex-1">
-          <div className="flex justify-between items-center mb-6">
+          <div className="flex justify-between items-center mb-6 md:w-[65vw]">
             <div className="flex">
-              <BsGrid3X3Gap className="text-2xl mr-3 ml-10" />
+              <BsGrid3X3Gap className="text-2xl mr-3" />
               <p>Showing 1-9 of {PRODUCTS.length} results</p>
             </div>
             <div className="flex items-center gap-4">
@@ -367,6 +367,7 @@ export default function ShopPage() {
               <p>Show 4</p>
             </div>
           </div>
+          <div className="divider"></div>
 
           {/* Products */}
           {filteredAndSortedProducts.length > 0 ? (
