@@ -33,20 +33,20 @@
       ],
     },
     {
-      name: "About",
-      path: "/about",
-      submenu: [
-        { name: "Submenu 1", path: "/categories/submenu-1" },
-        { name: "Submenu 2", path: "/categories/submenu-2" },
-      ],
+      name: "Pages",
+      path: "/pages",
+      // submenu: [
+      //   { name: "Submenu 1", path: "/categories/submenu-1" },
+      //   { name: "Submenu 2", path: "/categories/submenu-2" },
+      // ],
     },
     {
-      name: "Services",
-      path: "/services",
-      submenu: [
-        { name: "Submenu 1", path: "/categories/submenu-1" },
-        { name: "Submenu 2", path: "/categories/submenu-2" },
-      ],
+      name: "Blog",
+      path: "/blog",
+      // submenu: [
+      //   { name: "Submenu 1", path: "/categories/submenu-1" },
+      //   { name: "Submenu 2", path: "/categories/submenu-2" },
+      // ],
     },
     {
       name: "Contact",

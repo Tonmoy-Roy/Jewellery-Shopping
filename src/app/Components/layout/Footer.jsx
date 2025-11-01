@@ -9,7 +9,7 @@ const Footer = () => {
     return (
         <footer className="bg-white border-t border-gray-200 mt-16">
             {/* Newsletter Section */}
-            <div className="text-center py-10 px-4 border-b border-gray-200">
+            <div className="text-center py-10 px-4 border-gray-200">
                 <h2 className="text-xl font-semibold mb-2">
                     {COMPANY_INFO.newsletterTitle}
                 </h2>

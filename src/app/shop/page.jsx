@@ -121,7 +121,7 @@ export default function ShopPage() {
           />
 
           {/* Categories */}
-          <div className="mb-6">
+          <div className="mb-10">
             <h3 className="font-semibold mb-3">Categories</h3>
             <ul className="space-y-2">
               {categoryCountss.map((cat) => (
@@ -138,11 +138,10 @@ export default function ShopPage() {
               ))}
             </ul>
           </div>
-
-          <div className="divider"></div>
+          <div className="border-t mb-5 border-gray-200"></div>
 
           {/* Price Filter */}
-          <div className="mb-6">
+          <div className="mb-10">
             <h3 className="font-semibold mb-3">Filter by Price</h3>
 
             <div
@@ -214,7 +213,7 @@ export default function ShopPage() {
 
 
 
-          <div className="divider"></div>
+          <div className="border-t mb-5 border-gray-200"></div>
 
 
           {/* Carats */}
@@ -260,7 +259,7 @@ export default function ShopPage() {
 
 
 
-          <div className="divider"></div>
+          <div className="border-t mb-5 border-gray-200"></div>
 
 
           {/* Brands */}
@@ -317,7 +316,7 @@ export default function ShopPage() {
 
 
 
-          <div className="divider"></div>
+          <div className="border-t mb-5 border-gray-200"></div>
 
 
           {/* Colors */}
@@ -333,7 +332,7 @@ export default function ShopPage() {
               ))}
             </div>
           </div>
-          <div className="divider"></div>
+          <div className="border-t mb-5 border-gray-200"></div>
           <h3 className="font-semibold mb-3">Tags</h3>
           <div className="flex gap-2 mb-2">
             <button className="btn btn-outline hover:bg-amber-400 rounded-2xl">Accessories</button>
@@ -346,17 +345,16 @@ export default function ShopPage() {
           </div>
         </aside>
 
-
         {/* 🔹 Product Grid */}
         <main className="flex-1">
-          <div className="flex justify-between items-center mb-6 md:w-[65vw]">
+          <div className="flex justify-between items-center mb-6 md:w-[65vw] border-b border-gray-200">
             <div className="flex">
               <BsGrid3X3Gap className="text-2xl mr-3" />
               <p>Showing 1-9 of {PRODUCTS.length} results</p>
             </div>
             <div className="flex items-center gap-4">
               <select
-                className="border rounded-md p-2 w-full md:w-auto"
+                className="border rounded-md p-2 w-full md:w-auto mb-5"
                 value={sortOption}
                 onChange={(e) => setSortOption(e.target.value)}
               >
@@ -367,11 +365,9 @@ export default function ShopPage() {
               <p>Show 4</p>
             </div>
           </div>
-          <div className="divider"></div>
-
           {/* Products */}
           {filteredAndSortedProducts.length > 0 ? (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredAndSortedProducts.slice(0, 9).map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
