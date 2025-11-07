@@ -6,6 +6,12 @@ import Link from "next/link";
 import PRODUCTS from "../../constants/data";
 import Coverimg from "@/app/Components/common/Coverimg";
 import Footer from "@/app/Components/layout/Footer";
+import { TiHeartFullOutline } from "react-icons/ti";
+import { MdCompareArrows } from "react-icons/md";
+import { SlBadge } from "react-icons/sl";
+import { MdSecurity } from "react-icons/md";
+import { LiaShippingFastSolid } from "react-icons/lia";
+
 
 const Page = () => {
     const { id } = useParams();
@@ -20,6 +26,20 @@ const Page = () => {
     const relatedProducts = PRODUCTS.filter(
         (p) => p.category === product.category && p.id !== product.id
     ).slice(0, 6);
+
+    const [quantity, setQuantity] = useState(1);
+
+    const handleIncrease = () => setQuantity((prev) => prev + 1);
+    const handleDecrease = () => setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
+
+    const handleAddToCart = () => {
+        console.log(`Added ${quantity} of ${product.name} to cart`);
+    };
+
+    const handleBuyNow = () => {
+        console.log(`Buying ${quantity} of ${product.name}`);
+    };
+
 
     return (
         <div>
@@ -70,38 +90,102 @@ const Page = () => {
 
                 {/* Right: Info */}
                 <div className="text-center sm:text-left mb-20">
-                    <h1 className="text-2xl font-bold mb-2">{product.name}</h1>
-                    <p className="text-gray-500 mb-1">Brand: {product.brand}</p>
-                    <p className="text-gray-500 mb-1">Category: {product.category}</p>
-                    {product.carats && <p className="text-gray-500 mb-1">Carats: {product.carats}</p>}
-                    <p className="text-yellow-500">⭐⭐⭐⭐⭐ ({product.reviews} reviews)</p>
-                    <p className="text-green-600 font-semibold mt-2">{product.stock}</p>
-
+                    <h1 className="text-2xl font-semibold mb-2">{product.name}</h1>
+                    <div className="md:flex">
+                        <p className="text-gray-500 mb-1 mr-2">Brand: {product.brand}</p>
+                        <p className="mr-2">|</p>
+                        <p className="text-yellow-500 mr-2">⭐⭐⭐⭐⭐ <span className="text-gray-500">({product.reviews}) reviews</span></p>
+                        <p className="mr-2">|</p>
+                        <p >{product.inStock ? <span className="text-green-600 font-semibold">in stock</span> : <span className="text-red-600">out of stock</span>}</p>
+                    </div>
+                    <p className="text-gray-500 mb-1">Carats: {product.carats}</p>
                     <div className="mt-3">
                         <span className="text-3xl font-bold">${product.price}</span>
                         <span className="line-through ml-2">${product.price + 2000}</span>
                     </div>
+                    <div className="border-t mt-5 text-gray-200"></div>
+                    {/* Quantity and Buttons */}
+                    <div className="mt-6 space-y-4">
+                        {/* Quantity Selector */}
+                        <div className="flex items-center justify-center sm:justify-start space-x-2 md:w-[40vw]">
+                            <div className="bg-gray-100 rounded">
+                                <button
+                                    onClick={handleDecrease}
+                                    className="mr-3 px-3 py-2 rounded cursor-pointer"
+                                >
+                                    -
+                                </button>
+                                <span className="px-3 py-2 mr-3 rounded">
+                                    {quantity}
+                                </span>
+                                <button
+                                    onClick={handleIncrease}
+                                    className="cursor-pointer border-gray-400 px-3 py-2 rounded"
+                                >
+                                    +
+                                </button>
+                            </div>
+                            {/* Add to Cart / Buy Buttons */}
+                            <div>
+                                <button
+                                    onClick={handleAddToCart}
+                                    className="btn mr-5 bg-black text-white px-3 py-2 rounded md:w-[10vw]"
+                                >
+                                    Add To Cart
+                                </button>
+                            </div>
+                            <div className="flex md:flex cursor-pointer ">
+                                <TiHeartFullOutline className="text-3xl" />
+                                <p className="hover:text-red-700">Browse Wishlist</p>
+                            </div>
+                            <div className="flex md:flex cursor-pointer">
+                                <MdCompareArrows className="text-3xl" />
+                                <p className="hover:text-blue-600">Compare</p>
+                            </div>
+                        </div>
+                        <button
+                            onClick={handleBuyNow}
+                            className="mx-auto btn btn-outline px-8 py-3 rounded hover:bg-black hover:text-white"
+                        >
+                            Buy It Now
+                        </button>
 
-                    <p className="mt-4 text-gray-700">{product.description}</p>
+                        {/* Extra info */}
+                        <ul className="mt-6 text-sm space-y-2">
+                            <li className="flex"><LiaShippingFastSolid className="mt-1 mr-2" />
+                                Free Shipping & Exchanges</li>
+                            <li className="flex"><MdSecurity className="mt-1 mr-2" />
+                                Flexible And Secure Payment, Pay On Delivery</li>
+                            <li className="flex"><SlBadge className="mt-1 mr-2" />
+                                600,000 Happy Customers
+                            </li>
+                        </ul>
 
-                    {/* Buttons */}
-                    <div className="mt-6 gap-4">
-                        <button className="bg-black text-white px-6 py-2 rounded mr-5">Add To Cart</button>
-                        <button className="border px-6 py-2 rounded hover:bg-gray-100">Buy It Now</button>
+                        <div className="border-t text-gray-200 mt-5"></div>
+
+                        <div className="mt-4 text-center">
+                            <p className="text-sm font-semibold mb-2">Guarantee Safe & Secure Checkout</p>
+                            <div className="flex items-center justify-center space-x-4">
+                                <Image src="/images/OlightAllImage/Group 21.png" alt="stripe" width={40} height={60} className="cursor-pointer"/>
+                                <Image src="/images/OlightAllImage/visa.png" alt="visa" width={40} height={40} className="cursor-pointer"/>
+                                <Image src="/images/OlightAllImage/rupay.png" alt="rupay" width={40} height={40} className="cursor-pointer"/>
+                                <Image src="/images/OlightAllImage/Group.png" alt="mastercard" width={40} height={40} className="cursor-pointer"/>
+                                <Image src="/images/OlightAllImage/masterCard.png" alt="amex" width={40} height={40} className="cursor-pointer"/>
+                                <Image src="/images/OlightAllImage/americanExpress.png" alt="amex" width={40} height={40} className="cursor-pointer"/>
+                            </div>
+                        </div>
+                        <div className="border-t text-gray-200 mt-5"></div>
+                        <div>
+                            <p className="text-sm"><span className="text-gray-500">SKU:</span> durable-bronze-clock-01678109</p>
+                            <p className="text-sm"><span className="text-gray-500">Category: </span>{product.category}</p>
+                        </div>
                     </div>
 
-                    {/* Extra info */}
-                    <ul className="mt-6 text-sm text-gray-600 space-y-2">
-                        <li>🚚 Free Shipping & Exchanges</li>
-                        <li>💳 Secure Payment Options (Visa, Stripe, RuPay)</li>
-                        <li>😊 600,000+ Happy Customers</li>
-                    </ul>
-
-                    <div className="mt-6 border-t pt-4 text-xs text-gray-500">
-                        <p>SKU: durable-bronze-clock-01678109</p>
-                        <p>Category: {product.category}</p>
-                    </div>
                 </div>
+            </div>
+            <div className="max-w-6xl mx-auto">
+                <p className="text-3xl font-semibold mb-2">Description </p>
+                <p>{product.shortDescription}</p>
             </div>
 
             {/* Related Products */}
@@ -134,7 +218,7 @@ const Page = () => {
                             </div>
                             <Link
                                 href={`/productdetails/${item.id}`}
-                                className="bg-black text-white py-1.5 px-3 rounded inline-block text-center text-sm"
+                                className="btn bg-black text-white px-4 py-2 rounded inline-block text-center text-sm"
                             >
                                 Details
                             </Link>
