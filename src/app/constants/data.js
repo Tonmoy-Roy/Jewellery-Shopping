@@ -4,8 +4,13 @@ const PRODUCTS = [
     name: "Awesome Wooden Watch",
     category: "Accessories",
     brand: "TimberCraft",
-    carats: "13kt",
-    image: "/images/OlightAllImage/2ShopPage/2.jpg",
+    carats: null,
+    images: [
+      "/images/OlightAllImage/2ShopPage/2.jpg",
+      "/images/OlightAllImage/2ShopPage/9.jpg",
+      "/images/OlightAllImage/2ShopPage/10.jpg",
+      "/images/OlightAllImage/2ShopPage/5.jpg"
+    ],
     reviews: 18,
     price: 678.23,
   },
@@ -15,7 +20,12 @@ const PRODUCTS = [
     category: "Rings",
     brand: "Ariel",
     carats: "18kt",
-    image: "/images/OlightAllImage/2ShopPage/3.jpg",
+    images: [
+      "/images/OlightAllImage/2ShopPage/3.jpg",
+      "/images/OlightAllImage/2ShopPage/9.jpg",
+      "/images/OlightAllImage/2ShopPage/6.jpg",
+      "/images/OlightAllImage/2ShopPage/7.jpg"
+    ],
     reviews: 15,
     price: 780.55,
   },
@@ -25,17 +35,28 @@ const PRODUCTS = [
     category: "Necklaces",
     brand: "Gordon",
     carats: "14kt",
-    image: "/images/OlightAllImage/2ShopPage/6.jpg",
+    images: [
+      "/images/OlightAllImage/2ShopPage/6.jpg",
+      "/images/OlightAllImage/2ShopPage/8.jpg",
+      "/images/OlightAllImage/2ShopPage/9.jpg",
+      "/images/OlightAllImage/2ShopPage/10.jpg"
+    ],
     reviews: 22,
     price: 1200.99,
   },
+  // === Jewellery ===
   {
     id: 4,
     name: "Platinum Infinity Ring",
     category: "Jewellery",
     brand: "Lizzie",
     carats: "22kt",
-    image: "/images/OlightAllImage/2ShopPage/5.jpg",
+    images: [
+      "/images/OlightAllImage/2ShopPage/5.jpg",
+      "/images/OlightAllImage/2ShopPage/6.jpg",
+      "/images/OlightAllImage/2ShopPage/7.jpg",
+      "/images/OlightAllImage/2ShopPage/8.jpg"
+    ],
     reviews: 38,
     price: 3250.00
   },
@@ -45,7 +66,12 @@ const PRODUCTS = [
     category: "Jewellery",
     brand: "Mejuri",
     carats: "18kt",
-    image: "/images/OlightAllImage/2ShopPage/6.jpg",
+    images: [
+      "/images/OlightAllImage/2ShopPage/6.jpg",
+      "/images/OlightAllImage/2ShopPage/7.jpg",
+      "/images/OlightAllImage/2ShopPage/8.jpg",
+      "/images/OlightAllImage/2ShopPage/9.jpg"
+    ],
     reviews: 25,
     price: 980.00
   },
@@ -54,8 +80,13 @@ const PRODUCTS = [
     name: "Turquoise Beaded Anklet",
     category: "Jewellery",
     brand: "Mandiler",
-    carats: "13kt",
-    image: "/images/OlightAllImage/2ShopPage/7.jpg",
+    carats: null,
+    images: [
+      "/images/OlightAllImage/2ShopPage/7.jpg",
+      "/images/OlightAllImage/2ShopPage/8.jpg",
+      "/images/OlightAllImage/2ShopPage/9.jpg",
+      "/images/OlightAllImage/2ShopPage/2.jpg"
+    ],
     reviews: 44,
     price: 180.50
   },
@@ -65,7 +96,12 @@ const PRODUCTS = [
     category: "Jewellery",
     brand: "LuxeOpal",
     carats: "14kt",
-    image: "/images/OlightAllImage/2ShopPage/9.jpg",
+    images: [
+      "/images/OlightAllImage/2ShopPage/9.jpg",
+      "/images/OlightAllImage/2ShopPage/2.jpg",
+      "/images/OlightAllImage/2ShopPage/3.jpg",
+      "/images/OlightAllImage/2ShopPage/4.jpg"
+    ],
     reviews: 31,
     price: 650.00
   },
@@ -74,8 +110,13 @@ const PRODUCTS = [
     name: "Silver Charm Bracelet",
     category: "Jewellery",
     brand: "Charmelle",
-    carats: "13kt",
-    image: "/images/OlightAllImage/2ShopPage/8.jpg",
+    carats: null,
+    images: [
+      "/images/OlightAllImage/2ShopPage/8.jpg",
+      "/images/OlightAllImage/2ShopPage/9.jpg",
+      "/images/OlightAllImage/2ShopPage/2.jpg",
+      "/images/OlightAllImage/2ShopPage/3.jpg"
+    ],
     reviews: 52,
     price: 220.00
   },
@@ -85,7 +126,12 @@ const PRODUCTS = [
     category: "Jewellery",
     brand: "BrillianceCo",
     carats: "24kt",
-    image: "/images/OlightAllImage/2ShopPage/7.jpg",
+    images: [
+      "/images/OlightAllImage/2ShopPage/7.jpg",
+      "/images/OlightAllImage/2ShopPage/8.jpg",
+      "/images/OlightAllImage/2ShopPage/9.jpg",
+      "/images/OlightAllImage/2ShopPage/5.jpg"
+    ],
     reviews: 27,
     price: 4200.00
   },
@@ -95,7 +141,12 @@ const PRODUCTS = [
     category: "Jewellery",
     brand: "AquaLuxe",
     carats: "18kt",
-    image: "/images/OlightAllImage/2ShopPage/2.jpg",
+    images: [
+      "/images/OlightAllImage/2ShopPage/2.jpg",
+      "/images/OlightAllImage/2ShopPage/3.jpg",
+      "/images/OlightAllImage/2ShopPage/4.jpg",
+      "/images/OlightAllImage/2ShopPage/5.jpg"
+    ],
     rating: 5,
     reviews: 39,
     price: 1780.00
@@ -106,7 +157,12 @@ const PRODUCTS = [
     category: "Jewellery",
     brand: "CrimsonGem",
     carats: "14kt",
-    image: "/images/OlightAllImage/2ShopPage/2.jpg",
+    images: [
+      "/images/OlightAllImage/2ShopPage/2.jpg",
+      "/images/OlightAllImage/2ShopPage/3.jpg",
+      "/images/OlightAllImage/2ShopPage/4.jpg",
+      "/images/OlightAllImage/2ShopPage/6.jpg"
+    ],
     rating: 4,
     reviews: 22,
     price: 410.00
@@ -116,8 +172,13 @@ const PRODUCTS = [
     name: "Moonstone Layered Necklace",
     category: "Jewellery",
     brand: "LunarLight",
-    carats: "13kt",
-    image: "/images/OlightAllImage/2ShopPage/3.jpg",
+    carats: null,
+    images: [
+      "/images/OlightAllImage/2ShopPage/3.jpg",
+      "/images/OlightAllImage/2ShopPage/4.jpg",
+      "/images/OlightAllImage/2ShopPage/5.jpg",
+      "/images/OlightAllImage/2ShopPage/6.jpg"
+    ],
     rating: 5,
     reviews: 48,
     price: 520.00
@@ -128,7 +189,12 @@ const PRODUCTS = [
     category: "Jewellery",
     brand: "Sunburst",
     carats: "22kt",
-    image: "/images/OlightAllImage/2ShopPage/4.jpg",
+    images: [
+      "/images/OlightAllImage/2ShopPage/4.jpg",
+      "/images/OlightAllImage/2ShopPage/5.jpg",
+      "/images/OlightAllImage/2ShopPage/6.jpg",
+      "/images/OlightAllImage/2ShopPage/7.jpg"
+    ],
     rating: 4,
     reviews: 35,
     price: 890.00
@@ -139,7 +205,12 @@ const PRODUCTS = [
     category: "Jewellery",
     brand: "VioletRare",
     carats: "18kt",
-    image: "/images/OlightAllImage/2ShopPage/5.jpg",
+    images: [
+      "/images/OlightAllImage/2ShopPage/5.jpg",
+      "/images/OlightAllImage/2ShopPage/6.jpg",
+      "/images/OlightAllImage/2ShopPage/7.jpg",
+      "/images/OlightAllImage/2ShopPage/8.jpg"
+    ],
     rating: 5,
     reviews: 29,
     price: 1350.00
@@ -149,8 +220,13 @@ const PRODUCTS = [
     name: "Black Onyx Cuff Bracelet",
     category: "Jewellery",
     brand: "ObsidianEdge",
-    carats: "13kt",
-    image: "/images/OlightAllImage/2ShopPage/6.jpg",
+    carats: null,
+    images: [
+      "/images/OlightAllImage/2ShopPage/6.jpg",
+      "/images/OlightAllImage/2ShopPage/7.jpg",
+      "/images/OlightAllImage/2ShopPage/8.jpg",
+      "/images/OlightAllImage/2ShopPage/9.jpg"
+    ],
     rating: 4,
     reviews: 41,
     price: 680.00
@@ -161,18 +237,29 @@ const PRODUCTS = [
     category: "Jewellery",
     brand: "GreenGlow",
     carats: "14kt",
-    image: "/images/OlightAllImage/2ShopPage/7.jpg",
+    images: [
+      "/images/OlightAllImage/2ShopPage/7.jpg",
+      "/images/OlightAllImage/2ShopPage/8.jpg",
+      "/images/OlightAllImage/2ShopPage/9.jpg",
+      "/images/OlightAllImage/2ShopPage/2.jpg"
+    ],
     rating: 5,
     reviews: 33,
     price: 720.00
   },
+  // === Accessories ===
   {
     id: 17,
     category: "Accessories",
     name: "Gold Chain Belt",
     brand: "GildedLink",
     carats: "18kt",
-    image: "/images/OlightAllImage/2ShopPage/9.jpg",
+    images: [
+      "/images/OlightAllImage/2ShopPage/9.jpg",
+      "/images/OlightAllImage/2ShopPage/5.jpg",
+      "/images/OlightAllImage/2ShopPage/3.jpg",
+      "/images/OlightAllImage/2ShopPage/7.jpg"
+    ],
     rating: 5,
     reviews: 44,
     price: 280.00
@@ -182,8 +269,13 @@ const PRODUCTS = [
     category: "Accessories",
     name: "Leather Cuff Bracelet",
     brand: "UrbanHide",
-    carats: "13kt",
-    image: "/images/OlightAllImage/2ShopPage/5.jpg",
+    carats: null,
+    images: [
+      "/images/OlightAllImage/2ShopPage/5.jpg",
+      "/images/OlightAllImage/2ShopPage/3.jpg",
+      "/images/OlightAllImage/2ShopPage/7.jpg",
+      "/images/OlightAllImage/2ShopPage/2.jpg"
+    ],
     rating: 4,
     reviews: 38,
     price: 95.00
@@ -194,7 +286,12 @@ const PRODUCTS = [
     name: "Silk Scarf with Gem Clasp",
     brand: "SilkenGem",
     carats: "14kt",
-    image: "/images/OlightAllImage/2ShopPage/3.jpg",
+    images: [
+      "/images/OlightAllImage/2ShopPage/3.jpg",
+      "/images/OlightAllImage/2ShopPage/7.jpg",
+      "/images/OlightAllImage/2ShopPage/2.jpg",
+      "/images/OlightAllImage/2ShopPage/8.jpg"
+    ],
     rating: 5,
     reviews: 29,
     price: 180.00
@@ -204,8 +301,13 @@ const PRODUCTS = [
     category: "Accessories",
     name: "Beaded Tassel Keychain",
     brand: "BohoBead",
-    carats: "13kt",
-    image: "/images/OlightAllImage/2ShopPage/7.jpg",
+    carats: null,
+    images: [
+      "/images/OlightAllImage/2ShopPage/7.jpg",
+      "/images/OlightAllImage/2ShopPage/2.jpg",
+      "/images/OlightAllImage/2ShopPage/8.jpg",
+      "/images/OlightAllImage/2ShopPage/4.jpg"
+    ],
     rating: 4,
     reviews: 52,
     price: 45.00
@@ -215,8 +317,13 @@ const PRODUCTS = [
     category: "Accessories",
     name: "Crystal Hair Pin Set",
     brand: "SparklePin",
-    carats: "13kt",
-    image: "/images/OlightAllImage/2ShopPage/2.jpg",
+    carats: null,
+    images: [
+      "/images/OlightAllImage/2ShopPage/2.jpg",
+      "/images/OlightAllImage/2ShopPage/8.jpg",
+      "/images/OlightAllImage/2ShopPage/4.jpg",
+      "/images/OlightAllImage/2ShopPage/9.jpg"
+    ],
     rating: 5,
     reviews: 61,
     price: 75.00
@@ -226,8 +333,13 @@ const PRODUCTS = [
     category: "Accessories",
     name: "Velvet Choker with Pearl",
     brand: "VelvetPearl",
-    carats: "13kt",
-    image: "/images/OlightAllImage/2ShopPage/8.jpg",
+    carats: null,
+    images: [
+      "/images/OlightAllImage/2ShopPage/8.jpg",
+      "/images/OlightAllImage/2ShopPage/4.jpg",
+      "/images/OlightAllImage/2ShopPage/9.jpg",
+      "/images/OlightAllImage/2ShopPage/5.jpg"
+    ],
     rating: 5,
     reviews: 33,
     price: 120.00
@@ -237,19 +349,30 @@ const PRODUCTS = [
     category: "Accessories",
     name: "Sterling Silver Anklet",
     brand: "SilverStep",
-    carats: "13kt",
-    image: "/images/OlightAllImage/2ShopPage/4.jpg",
+    carats: null,
+    images: [
+      "/images/OlightAllImage/2ShopPage/4.jpg",
+      "/images/OlightAllImage/2ShopPage/9.jpg",
+      "/images/OlightAllImage/2ShopPage/5.jpg",
+      "/images/OlightAllImage/2ShopPage/3.jpg"
+    ],
     rating: 4,
     reviews: 47,
     price: 85.00
   },
+  // === Diamonds ===
   {
     id: 24,
     category: "Diamonds",
     name: "1.5ct Princess Cut Studs",
     brand: "DiamondElite",
     carats: "24kt",
-    image: "/images/OlightAllImage/2ShopPage/6.jpg",
+    images: [
+      "/images/OlightAllImage/2ShopPage/6.jpg",
+      "/images/OlightAllImage/2ShopPage/2.jpg",
+      "/images/OlightAllImage/2ShopPage/3.jpg",
+      "/images/OlightAllImage/2ShopPage/5.jpg"
+    ],
     rating: 5,
     reviews: 55,
     price: 3200.00
@@ -260,33 +383,125 @@ const PRODUCTS = [
     name: "Eternity Band 2ct",
     brand: "ForeverBand",
     carats: "22kt",
-    image: "/images/OlightAllImage/2ShopPage/2.jpg",
+    images: [
+      "/images/OlightAllImage/2ShopPage/2.jpg",
+      "/images/OlightAllImage/2ShopPage/3.jpg",
+      "/images/OlightAllImage/2ShopPage/5.jpg",
+      "/images/OlightAllImage/2ShopPage/7.jpg"
+    ],
     rating: 5,
     reviews: 41,
     price: 4800.00
   },
-  
-  
-  
+  {
+    id: 26,
+    category: "Diamonds",
+    name: "Marquise Diamond Pendant",
+    brand: "MarquiseLux",
+    carats: "18kt",
+    images: [
+      "/images/OlightAllImage/2ShopPage/9.jpg",
+      "/images/OlightAllImage/2ShopPage/7.jpg",
+      "/images/OlightAllImage/2ShopPage/8.jpg",
+      "/images/OlightAllImage/2ShopPage/6.jpg"
+    ],
+    rating: 5,
+    reviews: 36,
+    price: 2150.00
+  },
+  {
+    id: 27,
+    category: "Diamonds",
+    name: "Three-Stone Diamond Ring",
+    brand: "TrinityGlow",
+    carats: "14kt",
+    images: [
+      "/images/OlightAllImage/2ShopPage/5.jpg",
+      "/images/OlightAllImage/2ShopPage/7.jpg",
+      "/images/OlightAllImage/2ShopPage/8.jpg",
+      "/images/OlightAllImage/2ShopPage/3.jpg"
+    ],
+    rating: 5,
+    reviews: 49,
+    price: 5900.00
+  },
+  {
+    id: 28,
+    category: "Diamonds",
+    name: "Diamond Cross Necklace",
+    brand: "FaithSpark",
+    carats: "18kt",
+    images: [
+      "/images/OlightAllImage/2ShopPage/7.jpg",
+      "/images/OlightAllImage/2ShopPage/8.jpg",
+      "/images/OlightAllImage/2ShopPage/3.jpg",
+      "/images/OlightAllImage/2ShopPage/9.jpg"
+    ],
+    rating: 4,
+    reviews: 30,
+    price: 1850.00
+  },
   {
     id: 29,
     category: "Diamonds",
     name: "Halo Diamond Bracelet",
     brand: "HaloHeaven",
     carats: "22kt",
-    image: "/images/OlightAllImage/2ShopPage/3.jpg",
+    images: [
+      "/images/OlightAllImage/2ShopPage/3.jpg",
+      "/images/OlightAllImage/2ShopPage/9.jpg",
+      "/images/OlightAllImage/2ShopPage/6.jpg",
+      "/images/OlightAllImage/2ShopPage/2.jpg"
+    ],
     rating: 5,
     reviews: 27,
     price: 4200.00
   },
-  
+  {
+    id: 30,
+    category: "Diamonds",
+    name: "Round Brilliant Drop Earrings",
+    brand: "BrillDrop",
+    carats: "14kt",
+    images: [
+      "/images/OlightAllImage/2ShopPage/8.jpg",
+      "/images/OlightAllImage/2ShopPage/6.jpg",
+      "/images/OlightAllImage/2ShopPage/2.jpg",
+      "/images/OlightAllImage/2ShopPage/5.jpg"
+    ],
+    rating: 5,
+    reviews: 58,
+    price: 2900.00
+  },
+  // === Earrings ===
+  {
+    id: 31,
+    category: "Earrings",
+    name: "Hoop Earrings with Charms",
+    brand: "CharmHoop",
+    carats: "18kt",
+    images: [
+      "/images/OlightAllImage/2ShopPage/4.jpg",
+      "/images/OlightAllImage/2ShopPage/6.jpg",
+      "/images/OlightAllImage/2ShopPage/2.jpg",
+      "/images/OlightAllImage/2ShopPage/9.jpg"
+    ],
+    rating: 4,
+    reviews: 66,
+    price: 130.00
+  },
   {
     id: 32,
     category: "Earrings",
     name: "Chandelier Crystal Earrings",
     brand: "CrystalChandelier",
-    carats: "13kt",
-    image: "/images/OlightAllImage/2ShopPage/6.jpg",
+    carats: null,
+    images: [
+      "/images/OlightAllImage/2ShopPage/6.jpg",
+      "/images/OlightAllImage/2ShopPage/2.jpg",
+      "/images/OlightAllImage/2ShopPage/9.jpg",
+      "/images/OlightAllImage/2ShopPage/5.jpg"
+    ],
     rating: 5,
     reviews: 40,
     price: 210.00
@@ -296,8 +511,13 @@ const PRODUCTS = [
     category: "Earrings",
     name: "Threader Chain Earrings",
     brand: "ThreadLux",
-    carats: "13kt",
-    image: "/images/OlightAllImage/2ShopPage/2.jpg",
+    carats: null,
+    images: [
+      "/images/OlightAllImage/2ShopPage/2.jpg",
+      "/images/OlightAllImage/2ShopPage/9.jpg",
+      "/images/OlightAllImage/2ShopPage/5.jpg",
+      "/images/OlightAllImage/2ShopPage/7.jpg"
+    ],
     rating: 4,
     reviews: 53,
     price: 90.00
@@ -307,32 +527,78 @@ const PRODUCTS = [
     category: "Earrings",
     name: "Pearl Drop Earrings",
     brand: "PearlGrace",
-    carats: "13kt",
-    image: "/images/OlightAllImage/2ShopPage/9.jpg",
+    carats: null,
+    images: [
+      "/images/OlightAllImage/2ShopPage/9.jpg",
+      "/images/OlightAllImage/2ShopPage/5.jpg",
+      "/images/OlightAllImage/2ShopPage/7.jpg",
+      "/images/OlightAllImage/2ShopPage/3.jpg"
+    ],
     rating: 5,
     reviews: 45,
     price: 160.00
   },
-  
- 
+  {
+    id: 35,
+    category: "Earrings",
+    name: "Geometric Gold Earrings",
+    brand: "GeoGold",
+    carats: "14kt",
+    images: [
+      "/images/OlightAllImage/2ShopPage/5.jpg",
+      "/images/OlightAllImage/2ShopPage/7.jpg",
+      "/images/OlightAllImage/2ShopPage/3.jpg",
+      "/images/OlightAllImage/2ShopPage/4.jpg"
+    ],
+    rating: 5,
+    reviews: 37,
+    price: 195.00
+  },
+  {
+    id: 36,
+    category: "Earrings",
+    name: "Emerald Cluster Earrings",
+    brand: "EmeraldBloom",
+    carats: "18kt",
+    images: [
+      "/images/OlightAllImage/2ShopPage/7.jpg",
+      "/images/OlightAllImage/2ShopPage/3.jpg",
+      "/images/OlightAllImage/2ShopPage/4.jpg",
+      "/images/OlightAllImage/2ShopPage/6.jpg"
+    ],
+    rating: 4,
+    reviews: 31,
+    price: 380.00
+  },
   {
     id: 37,
     category: "Earrings",
     name: "Minimalist Bar Studs",
     brand: "BarEssence",
-    carats: "13kt",
-    image: "/images/OlightAllImage/2ShopPage/3.jpg",
+    carats: null,
+    images: [
+      "/images/OlightAllImage/2ShopPage/3.jpg",
+      "/images/OlightAllImage/2ShopPage/4.jpg",
+      "/images/OlightAllImage/2ShopPage/6.jpg",
+      "/images/OlightAllImage/2ShopPage/2.jpg"
+    ],
     rating: 5,
     reviews: 72,
     price: 65.00
   },
+  // === Gift Sets ===
   {
     id: 38,
     category: "Gift Sets",
     name: "Pearl Necklace & Earring Set",
     brand: "PearlHarmony",
-    carats: "13kt",
-    image: "/images/OlightAllImage/2ShopPage/8.jpg",
+    carats: null,
+    images: [
+      "/images/OlightAllImage/2ShopPage/8.jpg",
+      "/images/OlightAllImage/2ShopPage/4.jpg",
+      "/images/OlightAllImage/2ShopPage/6.jpg",
+      "/images/OlightAllImage/2ShopPage/2.jpg"
+    ],
     rating: 5,
     reviews: 50,
     price: 320.00
@@ -342,8 +608,13 @@ const PRODUCTS = [
     category: "Gift Sets",
     name: "Silver Jewelry Trio",
     brand: "SilverTrio",
-    carats: "13kt",
-    image: "/images/OlightAllImage/2ShopPage/4.jpg",
+    carats: null,
+    images: [
+      "/images/OlightAllImage/2ShopPage/4.jpg",
+      "/images/OlightAllImage/2ShopPage/6.jpg",
+      "/images/OlightAllImage/2ShopPage/2.jpg",
+      "/images/OlightAllImage/2ShopPage/9.jpg"
+    ],
     rating: 4,
     reviews: 43,
     price: 180.00
@@ -354,7 +625,12 @@ const PRODUCTS = [
     name: "Gemstone Ring Collection",
     brand: "GemCollective",
     carats: "22kt",
-    image: "/images/OlightAllImage/2ShopPage/6.jpg",
+    images: [
+      "/images/OlightAllImage/2ShopPage/6.jpg",
+      "/images/OlightAllImage/2ShopPage/2.jpg",
+      "/images/OlightAllImage/2ShopPage/9.jpg",
+      "/images/OlightAllImage/2ShopPage/5.jpg"
+    ],
     rating: 5,
     reviews: 39,
     price: 450.00
@@ -365,30 +641,61 @@ const PRODUCTS = [
     name: "Luxury Diamond Pendant Set",
     brand: "LuxePendant",
     carats: "24kt",
-    image: "/images/OlightAllImage/2ShopPage/2.jpg",
+    images: [
+      "/images/OlightAllImage/2ShopPage/2.jpg",
+      "/images/OlightAllImage/2ShopPage/9.jpg",
+      "/images/OlightAllImage/2ShopPage/5.jpg",
+      "/images/OlightAllImage/2ShopPage/8.jpg"
+    ],
     rating: 5,
     reviews: 28,
     price: 1200.00
   },
-  
+  {
+    id: 42,
+    category: "Gift Sets",
+    name: "Birthstone Bracelet & Ring",
+    brand: "BirthGlow",
+    carats: "14kt",
+    images: [
+      "/images/OlightAllImage/2ShopPage/9.jpg",
+      "/images/OlightAllImage/2ShopPage/5.jpg",
+      "/images/OlightAllImage/2ShopPage/8.jpg",
+      "/images/OlightAllImage/2ShopPage/4.jpg"
+    ],
+    rating: 4,
+    reviews: 35,
+    price: 210.00
+  },
   {
     id: 43,
     category: "Gift Sets",
     name: "Gold Plated Essentials Set",
     brand: "GoldEssence",
-    carats: "13kt",
-    image: "/images/OlightAllImage/2ShopPage/5.jpg",
+    carats: null,
+    images: [
+      "/images/OlightAllImage/2ShopPage/5.jpg",
+      "/images/OlightAllImage/2ShopPage/8.jpg",
+      "/images/OlightAllImage/2ShopPage/4.jpg",
+      "/images/OlightAllImage/2ShopPage/6.jpg"
+    ],
     rating: 5,
     reviews: 47,
     price: 250.00
   },
+  // === Pearls ===
   {
     id: 44,
     category: "Pearls",
     name: "Akoya Pearl Strand 18in",
     brand: "AkoyaPure",
-    carats: "13kt",
-    image: "/images/OlightAllImage/2ShopPage/7.jpg",
+    carats: null,
+    images: [
+      "/images/OlightAllImage/2ShopPage/7.jpg",
+      "/images/OlightAllImage/2ShopPage/3.jpg",
+      "/images/OlightAllImage/2ShopPage/4.jpg",
+      "/images/OlightAllImage/2ShopPage/6.jpg"
+    ],
     rating: 5,
     reviews: 42,
     price: 890.00
@@ -398,20 +705,45 @@ const PRODUCTS = [
     category: "Pearls",
     name: "Baroque Pearl Earrings",
     brand: "BaroqueBeauty",
-    carats: "13kt",
-    image: "/images/OlightAllImage/2ShopPage/3.jpg",
+    carats: null,
+    images: [
+      "/images/OlightAllImage/2ShopPage/3.jpg",
+      "/images/OlightAllImage/2ShopPage/4.jpg",
+      "/images/OlightAllImage/2ShopPage/6.jpg",
+      "/images/OlightAllImage/2ShopPage/8.jpg"
+    ],
     rating: 5,
     reviews: 36,
     price: 280.00
   },
-  
+  {
+    id: 46,
+    category: "Pearls",
+    name: "Tahitian Black Pearl Ring",
+    brand: "TahitianNoir",
+    carats: "18kt",
+    images: [
+      "/images/OlightAllImage/2ShopPage/8.jpg",
+      "/images/OlightAllImage/2ShopPage/6.jpg",
+      "/images/OlightAllImage/2ShopPage/7.jpg",
+      "/images/OlightAllImage/2ShopPage/4.jpg"
+    ],
+    rating: 4,
+    reviews: 29,
+    price: 620.00
+  },
   {
     id: 47,
     category: "Pearls",
     name: "Freshwater Pearl Lariat",
     brand: "FreshPearl",
-    carats: "13kt",
-    image: "/images/OlightAllImage/2ShopPage/4.jpg",
+    carats: null,
+    images: [
+      "/images/OlightAllImage/2ShopPage/4.jpg",
+      "/images/OlightAllImage/2ShopPage/6.jpg",
+      "/images/OlightAllImage/2ShopPage/7.jpg",
+      "/images/OlightAllImage/2ShopPage/3.jpg"
+    ],
     rating: 5,
     reviews: 51,
     price: 195.00
@@ -422,21 +754,77 @@ const PRODUCTS = [
     name: "Pearl & Gold Cuff",
     brand: "PearlGold",
     carats: "22kt",
-    image: "/images/OlightAllImage/2ShopPage/6.jpg",
+    images: [
+      "/images/OlightAllImage/2ShopPage/6.jpg",
+      "/images/OlightAllImage/2ShopPage/7.jpg",
+      "/images/OlightAllImage/2ShopPage/3.jpg",
+      "/images/OlightAllImage/2ShopPage/8.jpg"
+    ],
     rating: 5,
     reviews: 33,
     price: 410.00
   },
-  
- 
-  
+  // === Rings ===
+  {
+    id: 49,
+    category: "Rings",
+    name: "Vintage Sapphire Ring",
+    brand: "VintageBlue",
+    carats: "14kt",
+    images: [
+      "/images/OlightAllImage/2ShopPage/2.jpg",
+      "/images/OlightAllImage/2ShopPage/3.jpg",
+      "/images/OlightAllImage/2ShopPage/5.jpg",
+      "/images/OlightAllImage/2ShopPage/7.jpg"
+    ],
+    rating: 5,
+    reviews: 46,
+    price: 1350.00
+  },
+  {
+    id: 50,
+    category: "Rings",
+    name: "Stackable Gemstone Rings",
+    brand: "StackGem",
+    carats: "18kt",
+    images: [
+      "/images/OlightAllImage/2ShopPage/9.jpg",
+      "/images/OlightAllImage/2ShopPage/5.jpg",
+      "/images/OlightAllImage/2ShopPage/7.jpg",
+      "/images/OlightAllImage/2ShopPage/3.jpg"
+    ],
+    rating: 4,
+    reviews: 59,
+    price: 220.00
+  },
+  {
+    id: 51,
+    category: "Rings",
+    name: "Rose Gold Signet Ring",
+    brand: "RoseSignet",
+    carats: "14kt",
+    images: [
+      "/images/OlightAllImage/2ShopPage/5.jpg",
+      "/images/OlightAllImage/2ShopPage/7.jpg",
+      "/images/OlightAllImage/2ShopPage/3.jpg",
+      "/images/OlightAllImage/2ShopPage/2.jpg"
+    ],
+    rating: 5,
+    reviews: 40,
+    price: 380.00
+  },
   {
     id: 52,
     category: "Rings",
     name: "Oval Emerald Cocktail Ring",
     brand: "EmeraldOval",
     carats: "22kt",
-    image: "/images/OlightAllImage/2ShopPage/7.jpg",
+    images: [
+      "/images/OlightAllImage/2ShopPage/7.jpg",
+      "/images/OlightAllImage/2ShopPage/3.jpg",
+      "/images/OlightAllImage/2ShopPage/2.jpg",
+      "/images/OlightAllImage/2ShopPage/9.jpg"
+    ],
     rating: 5,
     reviews: 32,
     price: 980.00
@@ -447,31 +835,77 @@ const PRODUCTS = [
     name: "Platinum Diamond Band",
     brand: "PlatinumBand",
     carats: "24kt",
-    image: "/images/OlightAllImage/2ShopPage/3.jpg",
+    images: [
+      "/images/OlightAllImage/2ShopPage/3.jpg",
+      "/images/OlightAllImage/2ShopPage/2.jpg",
+      "/images/OlightAllImage/2ShopPage/9.jpg",
+      "/images/OlightAllImage/2ShopPage/5.jpg"
+    ],
     rating: 5,
     reviews: 55,
     price: 2900.00
   },
-  
+  // === Wedding ===
+  {
+    id: 54,
+    category: "Wedding",
+    name: "His & Hers Wedding Bands",
+    brand: "EternalPair",
+    carats: "18kt",
+    images: [
+      "/images/OlightAllImage/2ShopPage/8.jpg",
+      "/images/OlightAllImage/2ShopPage/4.jpg",
+      "/images/OlightAllImage/2ShopPage/6.jpg",
+      "/images/OlightAllImage/2ShopPage/2.jpg"
+    ],
+    rating: 5,
+    reviews: 68,
+    price: 1800.00
+  },
   {
     id: 55,
     category: "Wedding",
     name: "Engagement Ring with Side Stones",
     brand: "PromiseRing",
     carats: "22kt",
-    image: "/images/OlightAllImage/2ShopPage/4.jpg",
+    images: [
+      "/images/OlightAllImage/2ShopPage/4.jpg",
+      "/images/OlightAllImage/2ShopPage/6.jpg",
+      "/images/OlightAllImage/2ShopPage/2.jpg",
+      "/images/OlightAllImage/2ShopPage/9.jpg"
+    ],
     rating: 5,
     reviews: 44,
     price: 5200.00
   },
-  
+  {
+    id: 56,
+    category: "Wedding",
+    name: "Vintage Lace Bridal Set",
+    brand: "LaceLegacy",
+    carats: "14kt",
+    images: [
+      "/images/OlightAllImage/2ShopPage/6.jpg",
+      "/images/OlightAllImage/2ShopPage/2.jpg",
+      "/images/OlightAllImage/2ShopPage/9.jpg",
+      "/images/OlightAllImage/2ShopPage/5.jpg"
+    ],
+    rating: 5,
+    reviews: 37,
+    price: 3400.00
+  },
   {
     id: 57,
     category: "Wedding",
     name: "Titanium Matte Wedding Ring",
     brand: "TitanStrong",
-    carats: "13kt",
-    image: "/images/OlightAllImage/2ShopPage/2.jpg",
+    carats: null,
+    images: [
+      "/images/OlightAllImage/2ShopPage/2.jpg",
+      "/images/OlightAllImage/2ShopPage/9.jpg",
+      "/images/OlightAllImage/2ShopPage/5.jpg",
+      "/images/OlightAllImage/2ShopPage/7.jpg"
+    ],
     rating: 4,
     reviews: 49,
     price: 380.00
@@ -481,31 +915,77 @@ const PRODUCTS = [
     category: "Wedding",
     name: "Pearl Bridal Tiara",
     brand: "BridalPearl",
-    carats: "13kt",
-    image: "/images/OlightAllImage/2ShopPage/9.jpg",
+    carats: null,
+    images: [
+      "/images/OlightAllImage/2ShopPage/9.jpg",
+      "/images/OlightAllImage/2ShopPage/5.jpg",
+      "/images/OlightAllImage/2ShopPage/7.jpg",
+      "/images/OlightAllImage/2ShopPage/3.jpg"
+    ],
     rating: 5,
     reviews: 41,
     price: 620.00
   },
- 
+  {
+    id: 59,
+    category: "Wedding",
+    name: "Custom Engraved Ring Pair",
+    brand: "ForeverEngraved",
+    carats: "18kt",
+    images: [
+      "/images/OlightAllImage/2ShopPage/5.jpg",
+      "/images/OlightAllImage/2ShopPage/7.jpg",
+      "/images/OlightAllImage/2ShopPage/3.jpg",
+      "/images/OlightAllImage/2ShopPage/8.jpg"
+    ],
+    rating: 5,
+    reviews: 53,
+    price: 950.00
+  },
   {
     id: 60,
     category: "Wedding",
     name: "Diamond Infinity Wedding Band",
     brand: "InfinityBond",
     carats: "24kt",
-    image: "/images/OlightAllImage/2ShopPage/7.jpg",
+    images: [
+      "/images/OlightAllImage/2ShopPage/7.jpg",
+      "/images/OlightAllImage/2ShopPage/3.jpg",
+      "/images/OlightAllImage/2ShopPage/8.jpg",
+      "/images/OlightAllImage/2ShopPage/4.jpg"
+    ],
     rating: 5,
     reviews: 35,
     price: 2150.00
+  },
+  {
+    id: 61,
+    category: "Wedding",
+    name: "Rose Gold Bridal Earrings",
+    brand: "RoseBride",
+    carats: "14kt",
+    images: [
+      "/images/OlightAllImage/2ShopPage/3.jpg",
+      "/images/OlightAllImage/2ShopPage/8.jpg",
+      "/images/OlightAllImage/2ShopPage/4.jpg",
+      "/images/OlightAllImage/2ShopPage/6.jpg"
+    ],
+    rating: 5,
+    reviews: 39,
+    price: 480.00
   },
   {
     id: 62,
     category: "Wedding",
     name: "Matching Couple Necklaces",
     brand: "LoveLink",
-    carats: "13kt",
-    image: "/images/OlightAllImage/2ShopPage/8.jpg",
+    carats: null,
+    images: [
+      "/images/OlightAllImage/2ShopPage/8.jpg",
+      "/images/OlightAllImage/2ShopPage/4.jpg",
+      "/images/OlightAllImage/2ShopPage/6.jpg",
+      "/images/OlightAllImage/2ShopPage/2.jpg"
+    ],
     rating: 4,
     reviews: 57,
     price: 320.00
@@ -515,8 +995,13 @@ const PRODUCTS = [
     category: "Wedding",
     name: "Floral Pearl Hair Comb",
     brand: "FloralPearl",
-    carats: "13kt",
-    image: "/images/OlightAllImage/2ShopPage/4.jpg",
+    carats: null,
+    images: [
+      "/images/OlightAllImage/2ShopPage/4.jpg",
+      "/images/OlightAllImage/2ShopPage/6.jpg",
+      "/images/OlightAllImage/2ShopPage/2.jpg",
+      "/images/OlightAllImage/2ShopPage/9.jpg"
+    ],
     rating: 5,
     reviews: 45,
     price: 190.00
@@ -527,7 +1012,12 @@ const PRODUCTS = [
     name: "Classic Solitaire Engagement",
     brand: "ClassicSolitaire",
     carats: "22kt",
-    image: "/images/OlightAllImage/2ShopPage/6.jpg",
+    images: [
+      "/images/OlightAllImage/2ShopPage/6.jpg",
+      "/images/OlightAllImage/2ShopPage/2.jpg",
+      "/images/OlightAllImage/2ShopPage/9.jpg",
+      "/images/OlightAllImage/2ShopPage/5.jpg"
+    ],
     rating: 5,
     reviews: 61,
     price: 6800.00
@@ -537,12 +1027,33 @@ const PRODUCTS = [
     category: "Wedding",
     name: "Groom's Black Onyx Cufflinks",
     brand: "GroomOnyx",
-    carats: "13kt",
-    image: "/images/OlightAllImage/2ShopPage/2.jpg",
+    carats: null,
+    images: [
+      "/images/OlightAllImage/2ShopPage/2.jpg",
+      "/images/OlightAllImage/2ShopPage/9.jpg",
+      "/images/OlightAllImage/2ShopPage/5.jpg",
+      "/images/OlightAllImage/2ShopPage/7.jpg"
+    ],
     rating: 5,
     reviews: 33,
     price: 210.00
   },
+  {
+    id: 66,
+    category: "Wedding",
+    name: "Eternity Diamond Anklet",
+    brand: "EternalAnklet",
+    carats: "18kt",
+    images: [
+      "/images/OlightAllImage/2ShopPage/9.jpg",
+      "/images/OlightAllImage/2ShopPage/5.jpg",
+      "/images/OlightAllImage/2ShopPage/7.jpg",
+      "/images/OlightAllImage/2ShopPage/3.jpg"
+    ],
+    rating: 5,
+    reviews: 29,
+    price: 890.00
+  }
 ];
 
 export default PRODUCTS;

@@ -7,7 +7,7 @@ export default function ProductCard({ product }) {
   return (
     <div className="bg-white text-center ">
       <Image
-        src={product.image}
+        src={product.images?.[0] || "/images/placeholder.jpg"}
         alt={product.name}
         width={250}
         height={250}
