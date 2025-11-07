@@ -13,7 +13,6 @@ const Coverimg2 = ({ imagePath, title, breadcrumb, breadcrumb2 }) => {
                     priority
                     className="absolute inset-0 object-cover"
                 />
-                <div className="absolute inset-0 bg-black/30"></div>
                 {/* Text Content */}
                 <div className="relative ml-40 z-10 text-white md:w-[41vw] text-left">
                     <p>{breadcrumb}</p>

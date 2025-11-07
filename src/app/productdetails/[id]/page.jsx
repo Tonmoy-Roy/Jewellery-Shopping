@@ -93,7 +93,7 @@ const Page = () => {
 
 
                 {/* Right: Info */}
-                <div className="sm:text-left mb-20 px-5 md:w-[42vw]">
+                <div className="sm:text-left mb-20 px-5 md:w-[40vw]">
                     <h1 className="text-2xl font-semibold mb-2">{product.name}</h1>
                     <div className="md:flex">
                         <p className="text-gray-500 mb-1 mr-2">Brand: {product.brand}</p>
@@ -111,7 +111,7 @@ const Page = () => {
                     {/* Quantity and Buttons */}
                     <div className="mt-6 space-y-4 text-center">
                         {/* Quantity Selector */}
-                        <div className="md:flex space-x-2 ">
+                        <div className="md:flex space-x-2">
                             <div className="btn rounded md:w-[9vw] mt-4 ">
                                 <button
                                     onClick={handleDecrease}

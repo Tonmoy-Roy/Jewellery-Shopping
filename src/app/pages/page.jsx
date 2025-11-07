@@ -2,6 +2,9 @@ import React from 'react';
 import Coverimg1 from '../Components/common/Coverimg1';
 import Coverimg2 from '../Components/common/Coverimg2';
 import Footer from '../Components/layout/Footer';
+import AllJewellery from '../Components/sections/allJewellery/AllJewellery';
+import SideImage from '../Components/sections/CollectionBanner/Components/SideImage';
+import ClientSection from '../Components/sections/ClientsSection/ClientSection';
 
 const page = () => {
     return (
@@ -41,10 +44,31 @@ const page = () => {
                                 Sparkle with New Collection
                             </>
                         }
-
                         breadcrumb2={<>Exceptional Handcrafted Design to Enhance The Magnificent <br /> Glow</>}
                     />
                 </div>
+            </div>
+            <div className='text-center mb-20'>
+                <p className='font-semibold text-3xl'>The Finishing Touch</p>
+                <p>Our collections represent an assemblage of diverse jewelry pieces united by a common theme.</p>
+            </div>
+            <div className='w-screen relative left-1/2 -ml-[51vw]'>
+                <SideImage></SideImage>
+            </div>
+            <div className='w-screen relative left-1/2 -ml-[51vw] mb-20'>
+                <AllJewellery></AllJewellery>
+            </div>
+            <div className='text-center mb-20'>
+                <p className='font-semibold text-3xl mb-10'>Our Team</p>
+                <div className='md:flex gap-6 justify-center items-center'>
+                    <div className='mb-5'><img src="/images/OlightAllImage/Rectangle 34625783.png" alt="" /></div>
+                    <div className='mb-5'><img src="/images/OlightAllImage/Rectangle 34625784.png" alt="" /></div>
+                    <div className='mb-5'><img src="/images/OlightAllImage/Rectangle 34625785.png" alt="" /></div>
+                    <div className='mb-5'><img src="/images/OlightAllImage/Rectangle 34625786.png" alt="" /></div>
+                </div>
+            </div>
+            <div>
+                <ClientSection></ClientSection>
             </div>
             <Footer></Footer>
         </div>

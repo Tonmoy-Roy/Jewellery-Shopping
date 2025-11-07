@@ -314,10 +314,7 @@ export default function ShopPage() {
             </ul>
           </div>
 
-
-
           <div className="border-t mb-5 border-gray-200"></div>
-
 
           {/* Colors */}
           <div className="mb-6">
