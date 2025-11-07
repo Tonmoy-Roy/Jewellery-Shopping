@@ -48,12 +48,15 @@ const Page = () => {
                 <Coverimg
                     imagePath="/images/OlightAllImage/3CategoriesPage/1.jpg"
                     title="Shop"
-                    breadcrumb={`HOME PAGE ➜ ${product.category.toUpperCase()} ➜ ${product.name.toUpperCase()}`}
+                    breadcrumb={`HOME PAGE ➜ PRODUCT`}
                 />
             </div>
 
             {/* Product Details */}
-            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+            <div className="max-w-6xl mx-auto items-start gap-10 ml-[19vw] mb-5 text-gray-500">
+                {`HOME PAGE ➜ ${product.category.toUpperCase()} ➜ ${product.name.toUpperCase()}`}
+            </div>
+            <div className="max-w-6xl mx-auto items-start grid grid-cols-1 md:grid-cols-2 gap-10">
                 {/* Left: Image Gallery */}
                 <div className="flex flex-col sm:flex-row items-center gap-6">
                     {/* Side Thumbnails */}
@@ -88,8 +91,9 @@ const Page = () => {
                     </div>
                 </div>
 
+
                 {/* Right: Info */}
-                <div className="text-center sm:text-left mb-20">
+                <div className="sm:text-left mb-20 px-5 md:w-[42vw]">
                     <h1 className="text-2xl font-semibold mb-2">{product.name}</h1>
                     <div className="md:flex">
                         <p className="text-gray-500 mb-1 mr-2">Brand: {product.brand}</p>
@@ -101,60 +105,60 @@ const Page = () => {
                     <p className="text-gray-500 mb-1">Carats: {product.carats}</p>
                     <div className="mt-3">
                         <span className="text-3xl font-bold">${product.price}</span>
-                        <span className="line-through ml-2">${product.price + 2000}</span>
+                        <span className="line-through ml-2 text-gray-500">${product.price + 2000}</span>
                     </div>
                     <div className="border-t mt-5 text-gray-200"></div>
                     {/* Quantity and Buttons */}
-                    <div className="mt-6 space-y-4">
+                    <div className="mt-6 space-y-4 text-center">
                         {/* Quantity Selector */}
-                        <div className="flex items-center justify-center sm:justify-start space-x-2 md:w-[40vw]">
-                            <div className="bg-gray-100 rounded">
+                        <div className="md:flex space-x-2 ">
+                            <div className="btn rounded md:w-[9vw] mt-4 ">
                                 <button
                                     onClick={handleDecrease}
-                                    className="mr-3 px-3 py-2 rounded cursor-pointer"
+                                    className="px-3 p-2 rounded cursor-pointer"
                                 >
                                     -
                                 </button>
-                                <span className="px-3 py-2 mr-3 rounded">
+                                <span className="px-3 py-2 rounded">
                                     {quantity}
                                 </span>
                                 <button
                                     onClick={handleIncrease}
-                                    className="cursor-pointer border-gray-400 px-3 py-2 rounded"
+                                    className="cursor-pointer px-3 py-2 rounded"
                                 >
                                     +
                                 </button>
                             </div>
                             {/* Add to Cart / Buy Buttons */}
-                            <div>
+                            <div className="mb-3">
                                 <button
                                     onClick={handleAddToCart}
-                                    className="btn mr-5 bg-black text-white px-3 py-2 rounded md:w-[10vw]"
+                                    className="btn mr-5 bg-black text-white w-35 rounded px-3 py-2 ml-5 mt-4"
                                 >
                                     Add To Cart
                                 </button>
                             </div>
-                            <div className="flex md:flex cursor-pointer ">
+                            <div className="flex md:flex cursor-pointer items-center justify-center mb-3 mt-4">
                                 <TiHeartFullOutline className="text-3xl" />
                                 <p className="hover:text-red-700">Browse Wishlist</p>
                             </div>
-                            <div className="flex md:flex cursor-pointer">
+                            <div className="flex md:flex cursor-pointer items-center justify-center ">
                                 <MdCompareArrows className="text-3xl" />
                                 <p className="hover:text-blue-600">Compare</p>
                             </div>
                         </div>
                         <button
                             onClick={handleBuyNow}
-                            className="mx-auto btn btn-outline px-8 py-3 rounded hover:bg-black hover:text-white"
+                            className="w-full btn btn-outline px-8 py-3 rounded hover:bg-black hover:text-white"
                         >
                             Buy It Now
                         </button>
 
                         {/* Extra info */}
-                        <ul className="mt-6 text-sm space-y-2">
+                        <ul className="mt-6 text-sm space-y-2 px-5 md:px-0">
                             <li className="flex"><LiaShippingFastSolid className="mt-1 mr-2" />
                                 Free Shipping & Exchanges</li>
-                            <li className="flex"><MdSecurity className="mt-1 mr-2" />
+                            <li className="flex text-left"><MdSecurity className="mt-1 mr-2" />
                                 Flexible And Secure Payment, Pay On Delivery</li>
                             <li className="flex"><SlBadge className="mt-1 mr-2" />
                                 600,000 Happy Customers
@@ -166,16 +170,16 @@ const Page = () => {
                         <div className="mt-4 text-center">
                             <p className="text-sm font-semibold mb-2">Guarantee Safe & Secure Checkout</p>
                             <div className="flex items-center justify-center space-x-4">
-                                <Image src="/images/OlightAllImage/Group 21.png" alt="stripe" width={40} height={60} className="cursor-pointer"/>
-                                <Image src="/images/OlightAllImage/visa.png" alt="visa" width={40} height={40} className="cursor-pointer"/>
-                                <Image src="/images/OlightAllImage/rupay.png" alt="rupay" width={40} height={40} className="cursor-pointer"/>
-                                <Image src="/images/OlightAllImage/Group.png" alt="mastercard" width={40} height={40} className="cursor-pointer"/>
-                                <Image src="/images/OlightAllImage/masterCard.png" alt="amex" width={40} height={40} className="cursor-pointer"/>
-                                <Image src="/images/OlightAllImage/americanExpress.png" alt="amex" width={40} height={40} className="cursor-pointer"/>
+                                <Image src="/images/OlightAllImage/Group 21.png" alt="stripe" width={40} height={60} className="cursor-pointer" />
+                                <Image src="/images/OlightAllImage/visa.png" alt="visa" width={40} height={40} className="cursor-pointer" />
+                                <Image src="/images/OlightAllImage/rupay.png" alt="rupay" width={40} height={40} className="cursor-pointer" />
+                                <Image src="/images/OlightAllImage/Group.png" alt="mastercard" width={40} height={40} className="cursor-pointer" />
+                                <Image src="/images/OlightAllImage/masterCard.png" alt="amex" width={40} height={40} className="cursor-pointer" />
+                                <Image src="/images/OlightAllImage/americanExpress.png" alt="amex" width={40} height={40} className="cursor-pointer" />
                             </div>
                         </div>
                         <div className="border-t text-gray-200 mt-5"></div>
-                        <div>
+                        <div className="text-left">
                             <p className="text-sm"><span className="text-gray-500">SKU:</span> durable-bronze-clock-01678109</p>
                             <p className="text-sm"><span className="text-gray-500">Category: </span>{product.category}</p>
                         </div>
@@ -183,47 +187,48 @@ const Page = () => {
 
                 </div>
             </div>
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-6xl mx-auto px-5 md:px-0">
                 <p className="text-3xl font-semibold mb-2">Description </p>
                 <p>{product.shortDescription}</p>
             </div>
 
             {/* Related Products */}
-            <div className="max-w-6xl mx-auto text-center mt-16 mb-24">
+            <div className="w-screen relative left-1/2 -ml-[51vw] text-center mt-16 mb-24 bg-gray-100 px-5 py-5">
                 <p className="text-3xl font-semibold mb-2">Related Product</p>
-                <p className="text-gray-600 mb-10">
+                <p className="mb-10">
                     Our Jewelry Is Made By The Finest Artists And Carefully Selected To Reflect Your Style And Personality
                 </p>
-
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 md:w-[80vw]">
-                    {relatedProducts.map((item) => (
-                        <div
-                            key={item.id}
-                            className="bg-white p-4 rounded-2xl hover:shadow-lg transition text-center"
-                        >
-                            <Image
-                                src={item.images?.[0] || "/images/placeholder.jpg"}
-                                alt={item.name}
-                                width={200}
-                                height={200}
-                                className="rounded-xl mx-auto object-cover"
-                            />
-                            <div className="md:h-[22vh]">
-                                <p className="text-sm text-gray-500 mt-3">{item.category}</p>
-                                <h3 className="font-semibold text-gray-800 mt-1">{item.name}</h3>
-                                <p className="text-sm text-yellow-500">
-                                    ⭐⭐⭐⭐⭐ <span className="text-gray-600">(5 Reviews)</span>
-                                </p>
-                                <p className="font-bold text-gray-800 mt-1">{item.price}$</p>
-                            </div>
-                            <Link
-                                href={`/productdetails/${item.id}`}
-                                className="btn bg-black text-white px-4 py-2 rounded inline-block text-center text-sm"
+                <div class="flex justify-center">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 md:w-[80vw]">
+                        {relatedProducts.map((item) => (
+                            <div
+                                key={item.id}
+                                className="p-4 rounded-2xl transition text-center"
                             >
-                                Details
-                            </Link>
-                        </div>
-                    ))}
+                                <Image
+                                    src={item.images?.[0] || "/images/placeholder.jpg"}
+                                    alt={item.name}
+                                    width={200}
+                                    height={200}
+                                    className="rounded-xl mx-auto bg-black"
+                                />
+                                <div className="md:h-[22vh]">
+                                    <p className="text-sm text-gray-500 mt-3">{item.category}</p>
+                                    <h3 className="font-semibold text-gray-800 mt-1">{item.name}</h3>
+                                    <p className="text-sm text-yellow-500">
+                                        ⭐⭐⭐⭐⭐ <span className="text-gray-600">(5 Reviews)</span>
+                                    </p>
+                                    <p className="font-bold text-gray-800 mt-1">{item.price}$</p>
+                                </div>
+                                <Link
+                                    href={`/productdetails/${item.id}`}
+                                    className="btn bg-black text-white px-4 py-2 rounded inline-block text-center text-sm"
+                                >
+                                    Details
+                                </Link>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
 
