@@ -5,7 +5,7 @@ import Coverimg from "../Components/common/Coverimg";
 import PRODUCTS from "../constants/data";
 import { BsGrid3X3Gap } from "react-icons/bs";
 import Footer from "../Components/layout/Footer";
-import Categories from "../Components/common/Categories";
+import CATEGORIES from "../constants/categories";
 
 export default function ShopPage() {
   const [priceRange, setPriceRange] = useState([100, 7000]); // actual applied filter
@@ -33,6 +33,13 @@ export default function ShopPage() {
     if (sortOption === "lowToHigh") return a.price - b.price;
     if (sortOption === "highToLow") return b.price - a.price;
     return 0;
+  });
+  const categoryCountss = CATEGORIES.map((category) => {
+    const count = PRODUCTS.filter(
+      (product) => product.category === category
+    ).length;
+
+    return { name: category, count };
   });
 
   useEffect(() => {
@@ -85,7 +92,7 @@ export default function ShopPage() {
     }
   };
 
- 
+
 
   return (
     <section className="md:px-15">
@@ -111,7 +118,24 @@ export default function ShopPage() {
           />
 
           {/* Categories */}
-          <Categories></Categories>
+          <div className="mb-10">
+            <h3 className="font-semibold mb-3">Categories</h3>
+            <ul className="space-y-2">
+              {categoryCountss.map((cat) => (
+                <li
+                  key={cat.name}
+                  className={`text-gray-700 hover:text-primary cursor-pointer ${selectedCategory === cat.name ? 'font-semibold text-primary' : ''}`}
+                  onClick={() => setSelectedCategory(cat.name)}
+                >
+                  <div className="flex justify-between">
+                    <div>{cat.name}</div>
+                    <div>({cat.count})</div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="border-t mb-5 border-gray-200"></div>
 
           {/* Price Filter */}
           <div className="mb-10">

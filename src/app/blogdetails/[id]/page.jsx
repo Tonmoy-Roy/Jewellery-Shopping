@@ -7,7 +7,7 @@ import BlogSidebar from '@/app/Components/common/BlogSidebar';
 import Footer from '@/app/Components/layout/Footer';
 
 const page = ({ params }) => {
-    const { id } = params;
+    const { id } = React.use(params);
     const blog = BLOG.find((item) => item.id === Number(id));
 
     if (!blog) {
@@ -54,6 +54,7 @@ const page = ({ params }) => {
                 <div className='mr-5 md:w-[50vw]'>
                     <Image
                         src={images}
+                        alt={blog.title}
                         width={500}
                         height={500}
                         className='rounded-xl md:h-[70vh] border-4 w-full mb-10'
