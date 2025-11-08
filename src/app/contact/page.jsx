@@ -4,6 +4,7 @@ import Image from "next/image";
 import { MapPin, Phone, Clock } from "lucide-react";
 import stores from "../constants/stores"
 import Footer from "../Components/layout/Footer";
+import Coverimg1 from "../Components/common/Coverimg1";
 
 export default function page() {
     const [formData, setFormData] = useState({
@@ -25,7 +26,19 @@ export default function page() {
     };
 
     return (
-        <section className="max-w-6xl mx-auto px-6 py-10">
+        <section className="max-w-6xl mx-auto px-6">
+            <div className="w-screen relative left-1/2 -ml-[51vw] mb-20">
+                <Coverimg1
+                    imagePath="/images/OlightAllImage/4ProductPage/7.jpg"
+                    title={
+                        <>
+                            Introducing <br />
+                            The New Era of Olight
+                        </>
+                    }
+                    breadcrumb="Olight is building the world’s most progressive jewellery platform – a place connecting the dots between old school craftsmanship and new ways of thinking. Through our online platform, we connect you with the most creative independent jewellers from around the globe."
+                />
+            </div>
             {/* === Get In Touch Header === */}
             <div className="text-center mb-10">
                 <h2 className="text-3xl font-semibold mb-2">Get In Touch</h2>
