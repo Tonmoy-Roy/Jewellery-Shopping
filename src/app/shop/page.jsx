@@ -3,10 +3,9 @@ import React, { useState, useEffect, useRef } from "react";
 import ProductCard from "../Components/common/ProductCard";
 import Coverimg from "../Components/common/Coverimg";
 import PRODUCTS from "../constants/data";
-import CATEGORIES from "../constants/categories";
 import { BsGrid3X3Gap } from "react-icons/bs";
 import Footer from "../Components/layout/Footer";
-
+import Categories from "../Components/common/Categories";
 
 export default function ShopPage() {
   const [priceRange, setPriceRange] = useState([100, 7000]); // actual applied filter
@@ -33,11 +32,9 @@ export default function ShopPage() {
   }).sort((a, b) => {
     if (sortOption === "lowToHigh") return a.price - b.price;
     if (sortOption === "highToLow") return b.price - a.price;
-    return 0; // default
+    return 0;
   });
 
-
-  // Ensure activeThumb is cleared when pointer/mouse/touch is released anywhere
   useEffect(() => {
     const clear = () => setActiveThumb(null);
     window.addEventListener("mouseup", clear);
@@ -73,7 +70,6 @@ export default function ShopPage() {
     } else {
       setTempRange([tempRange[0], Math.max(value, tempRange[0] + 100)]);
     }
-    // prevent default so inputs below don't steal focus in some browsers
     e.preventDefault();
   };
 
@@ -89,13 +85,7 @@ export default function ShopPage() {
     }
   };
 
-  const categoryCountss = CATEGORIES.map((category) => {
-    const count = PRODUCTS.filter(
-      (product) => product.category === category
-    ).length;
-
-    return { name: category, count };
-  });
+ 
 
   return (
     <section className="md:px-15">
@@ -121,24 +111,7 @@ export default function ShopPage() {
           />
 
           {/* Categories */}
-          <div className="mb-10">
-            <h3 className="font-semibold mb-3">Categories</h3>
-            <ul className="space-y-2">
-              {categoryCountss.map((cat) => (
-                <li
-                  key={cat.name}
-                  className="text-gray-700 hover:text-(--primary) cursor-pointer"
-                  onClick={() => setSelectedCategory(cat.name)}
-                >
-                  <div className="flex justify-between">
-                    <div>{cat.name}</div>
-                    <div>({cat.count})</div>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="border-t mb-5 border-gray-200"></div>
+          <Categories></Categories>
 
           {/* Price Filter */}
           <div className="mb-10">

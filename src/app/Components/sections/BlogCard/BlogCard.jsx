@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const BlogCard = ({ blog }) => {
@@ -19,7 +20,7 @@ const BlogCard = ({ blog }) => {
                     Jewelry has the remarkable ability to elevate any outfit, adding a
                     touch of glamour and personality to your look. As..
                 </p>
-                <a href="" className='underline'>Read More</a>
+                <Link href={`blogdetails/${blog.id}`} className='underline'>Read More</Link>
             </div>
         </div>
 
