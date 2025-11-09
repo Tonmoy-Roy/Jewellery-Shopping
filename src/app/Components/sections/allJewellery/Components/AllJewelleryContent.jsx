@@ -3,12 +3,12 @@ import React from "react";
 
 export default function AllJewelleryContent() {
   return (
-    <div className="space-y-3 ">
+    <div className="space-y-3 text-left">
       <p className="text-xs  sm:text-sm md:text-base uppercase tracking-wide text-black">
         purely hand-crafted
       </p>
 
-      <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold  leading-tight text-black">
+      <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold  leading-tight text-black md:w-[22vw]">
         All of our jewellery is handmade.
       </h1>
 
@@ -18,7 +18,7 @@ export default function AllJewelleryContent() {
         captivating collections.
       </p>
 
-      <div className="pt-2 ml-52 text-left">
+      <div className="pt-2">
         <Button black="black" />
       </div>
     </div>

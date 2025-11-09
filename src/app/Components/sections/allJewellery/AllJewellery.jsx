@@ -9,7 +9,7 @@ export default function AllJewellery() {
       {/* Hero Section */}
       <section className="relative lg:h-[65vh] md:h-[50vh] h-[40vh]  flex items-center justify-center md:justify-end">
         {/* Background Image */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 mr-10">
           <AllJewelleryImage />
           {/* <div className="absolute inset-0 bg-black/30" /> optional overlay */}
         </div>

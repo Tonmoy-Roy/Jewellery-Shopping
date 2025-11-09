@@ -91,7 +91,6 @@ const Page = () => {
                     </div>
                 </div>
 
-
                 {/* Right: Info */}
                 <div className="sm:text-left mb-20 px-5 md:w-[40vw]">
                     <h1 className="text-2xl font-semibold mb-2">{product.name}</h1>
@@ -111,7 +110,7 @@ const Page = () => {
                     {/* Quantity and Buttons */}
                     <div className="mt-6 space-y-4 text-center">
                         {/* Quantity Selector */}
-                        <div className="md:flex space-x-2">
+                        <div className="md:flex">
                             <div className="btn rounded md:w-[9vw] mt-4 ">
                                 <button
                                     onClick={handleDecrease}
@@ -133,12 +132,12 @@ const Page = () => {
                             <div className="mb-3">
                                 <button
                                     onClick={handleAddToCart}
-                                    className="btn mr-5 bg-black text-white w-35 rounded px-3 py-2 ml-5 mt-4"
+                                    className="btn mr-5 bg-black text-white w-32 rounded px-3 py-2 ml-5 mt-4"
                                 >
                                     Add To Cart
                                 </button>
                             </div>
-                            <div className="flex md:flex cursor-pointer items-center justify-center mb-3 mt-4">
+                            <div className="flex md:flex cursor-pointer items-center justify-center mb-3 mt-4 mr-5">
                                 <TiHeartFullOutline className="text-3xl" />
                                 <p className="hover:text-red-700">Browse Wishlist</p>
                             </div>

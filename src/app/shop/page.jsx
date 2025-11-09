@@ -6,6 +6,7 @@ import PRODUCTS from "../constants/data";
 import { BsGrid3X3Gap } from "react-icons/bs";
 import Footer from "../Components/layout/Footer";
 import CATEGORIES from "../constants/categories";
+import Tags from "../Components/common/Tags";
 
 export default function ShopPage() {
   const [priceRange, setPriceRange] = useState([100, 7000]); // actual applied filter
@@ -21,19 +22,27 @@ export default function ShopPage() {
   const [selectedBrand, setSelectedBrand] = useState(null);
 
   // Filter products based on search term
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 9; // show 9 per page
+
+  // Filter + Sort
   const filteredAndSortedProducts = PRODUCTS.filter((p) => {
     const matchCategory = selectedCategory ? p.category === selectedCategory : true;
     const matchSearch = p.name.toLowerCase().includes(searchTerm.toLowerCase());
     const matchPrice = p.price >= priceRange[0] && p.price <= priceRange[1];
     const matchCarat = selectedCarat ? p.carats === selectedCarat : true;
     const matchBrand = selectedBrand ? p.brand === selectedBrand : true;
-
     return matchCategory && matchSearch && matchPrice && matchCarat && matchBrand;
   }).sort((a, b) => {
     if (sortOption === "lowToHigh") return a.price - b.price;
     if (sortOption === "highToLow") return b.price - a.price;
     return 0;
   });
+
+  // Pagination logic
+  const totalPages = Math.ceil(filteredAndSortedProducts.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const currentItems = filteredAndSortedProducts.slice(startIndex, startIndex + itemsPerPage);
   const categoryCountss = CATEGORIES.map((category) => {
     const count = PRODUCTS.filter(
       (product) => product.category === category
@@ -112,7 +121,7 @@ export default function ShopPage() {
           <input
             type="text"
             placeholder="Search products..."
-            className="w-full mb-5 p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-100"
+            className="border rounded-md p-3 w-full focus:outline-none focus:ring-2 focus:ring-black mb-5"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
@@ -327,16 +336,7 @@ export default function ShopPage() {
             </div>
           </div>
           <div className="border-t mb-5 border-gray-200"></div>
-          <h3 className="font-semibold mb-3">Tags</h3>
-          <div className="flex gap-2 mb-2">
-            <button className="btn btn-outline hover:bg-amber-400 rounded-2xl">Accessories</button>
-            <button className="btn btn-outline hover:bg-amber-400 rounded-2xl">Bracelets</button>
-            <button className="btn btn-outline hover:bg-amber-400 rounded-2xl">Necklaces</button>
-          </div>
-          <div>
-            <button className="btn btn-outline hover:bg-amber-400 rounded-2xl mr-2">Single Earring</button>
-            <button className="btn btn-outline hover:bg-amber-400 rounded-2xl">Wedding</button>
-          </div>
+          <Tags></Tags>
         </aside>
 
         {/* 🔹 Product Grid */}
@@ -344,7 +344,7 @@ export default function ShopPage() {
           <div className="flex justify-between items-center mb-6 md:w-[65vw] border-b border-gray-200">
             <div className="flex">
               <BsGrid3X3Gap className="text-2xl mr-3" />
-              <p>Showing 1-9 of {PRODUCTS.length} results</p>
+              <p>Showing 9 products of {PRODUCTS.length} results</p>
             </div>
             <div className="flex items-center gap-4">
               <select
@@ -356,19 +356,45 @@ export default function ShopPage() {
                 <option value="lowToHigh">Price: Low to High</option>
                 <option value="highToLow">Price: High to Low</option>
               </select>
-              <p>Show 4</p>
             </div>
           </div>
           {/* Products */}
-          {filteredAndSortedProducts.length > 0 ? (
-            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredAndSortedProducts.slice(0, 9).map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-            </div>
-          ) : (
-            <p className="text-center text-gray-500 mt-10">No products found.</p>
-          )}
+          <div className="mt-6">
+            {currentItems.length > 0 ? (
+              <>
+                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {currentItems.map((product) => (
+                    <ProductCard key={product.id} product={product} />
+                  ))}
+                </div>
+
+                {/* Pagination Controls */}
+                <div className="flex justify-center items-center gap-3 mt-8">
+                  <button
+                    onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
+                    disabled={currentPage === 1}
+                    className="px-4 py-2 bg-gray-200 rounded disabled:opacity-50"
+                  >
+                    Prev
+                  </button>
+
+                  <span className="font-medium">
+                    Page {currentPage} of {totalPages}
+                  </span>
+
+                  <button
+                    onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
+                    disabled={currentPage === totalPages}
+                    className="px-4 py-2 bg-gray-200 rounded disabled:opacity-50"
+                  >
+                    Next
+                  </button>
+                </div>
+              </>
+            ) : (
+              <p className="text-center text-gray-500 mt-10">No products found.</p>
+            )}
+          </div>
 
         </main>
       </div>

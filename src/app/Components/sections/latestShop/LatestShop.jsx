@@ -1,6 +1,7 @@
 "use client";
 import ImageSection from "./Components/ImageSection";
 import Content from "./Components/Content";
+import Footer from "../../layout/Footer";
 
 export default function LatestShop() {
   return (
@@ -17,6 +18,7 @@ export default function LatestShop() {
           <Content />
         </div>
       </section>
+      <Footer></Footer>
     </div>
   );
 }

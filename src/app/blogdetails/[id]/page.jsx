@@ -3,12 +3,15 @@ import Coverimg from '@/app/Components/common/Coverimg';
 import BLOG from "../../constants/blog";
 import React, { useState } from 'react';
 import Image from "next/image";
-import BlogSidebar from '@/app/Components/common/BlogSidebar';
 import Footer from '@/app/Components/layout/Footer';
+import Categories from '@/app/Components/common/Categories';
+import Tags from '@/app/Components/common/Tags';
 
 const page = ({ params }) => {
     const { id } = React.use(params);
     const blog = BLOG.find((item) => item.id === Number(id));
+    const [searchTerm, setSearchTerm] = useState("");
+
 
     if (!blog) {
         return <div className="container mx-auto px-4 py-8">Blog post not found</div>;
@@ -136,7 +139,7 @@ const page = ({ params }) => {
                                     className="h-4 w-4"
                                 />
                                 <label className="text-gray-700 text-sm">
-                                    Save my name, email, and website in this browser for the next time I
+                                    Save my name, email and website in this browser for the next time I
                                     comment.
                                 </label>
                             </div>
@@ -151,7 +154,17 @@ const page = ({ params }) => {
                     </div>
                 </div>
                 <div>
-                    <BlogSidebar />
+                    <aside className="md:w-[25vw] p-4">
+                        <input
+                            type="text"
+                            placeholder="Search products..."
+                            className="border rounded-md p-3 w-full focus:outline-none focus:ring-2 focus:ring-black mb-5"
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                        />
+                        <Categories />
+                        <Tags></Tags>
+                    </aside>
                 </div>
             </div>
             <Footer></Footer>
