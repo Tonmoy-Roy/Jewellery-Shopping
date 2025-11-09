@@ -13,7 +13,7 @@ const BLOG = [
     category: "TRENDS",
     date: "April 22, 2025",
     title: "The Return of Statement Earrings",
-    excerpt: "Bold, sculptural, and unapologetically dramatic—statement earrings are reclaiming the spotlight. From oversized hoops to crystal chandeliers, this season’s designs demand attention and transform even the simplest outfit into a fashion moment."
+    excerpt: "Bold, sculptural, and unapologetically dramatic—statement earrings are reclaimunchecked the spotlight. From oversized hoops to crystal chandeliers, this season’s designs demand attention and transform even the simplest outfit into a fashion moment."
   },
   {
     id: 3,
@@ -79,9 +79,10 @@ const BLOG = [
     title: "Hoop Earrings Every Woman Needs",
     excerpt: "From micro huggies to oversized bamboo styles, hoops remain the most versatile earring shape. Invest in gold, silver, and diamond-pavé versions to cover every mood and occasion."
   },
+  // === Remaining posts use random images from the first 10 ===
   {
     id: 11,
-    image_url: "https://example.com/jewelry/custom-11.jpg",
+    image_url: "/images/OlightAllImage/5BlogPage/10038.jpg",
     category: "PERSONALIZATION",
     date: "August 01, 2025",
     title: "Custom Jewelry: Beyond Initials",
@@ -89,7 +90,7 @@ const BLOG = [
   },
   {
     id: 12,
-    image_url: "https://example.com/jewelry/labgrown-12.jpg",
+    image_url: "/images/OlightAllImage/5BlogPage/10035.jpg",
     category: "SUSTAINABILITY",
     date: "August 15, 2025",
     title: "Why Lab-Grown Diamonds Are Winning",
@@ -97,7 +98,7 @@ const BLOG = [
   },
   {
     id: 13,
-    image_url: "https://example.com/jewelry/cuffs-13.jpg",
+    image_url: "/images/OlightAllImage/5BlogPage/h1_bn-1.jpg",
     category: "BOLD PIECES",
     date: "August 28, 2025",
     title: "Cuff Bracelets That Command Attention",
@@ -105,7 +106,7 @@ const BLOG = [
   },
   {
     id: 14,
-    image_url: "https://example.com/jewelry/mixing-14.jpg",
+    image_url: "/images/OlightAllImage/5BlogPage/10050.jpg",
     category: "STYLE TIPS",
     date: "September 09, 2025",
     title: "Mixing Metals Like a Stylist",
@@ -113,7 +114,7 @@ const BLOG = [
   },
   {
     id: 15,
-    image_url: "https://example.com/jewelry/earcuffs-15.jpg",
+    image_url: "/images/OlightAllImage/5BlogPage/10037.jpg",
     category: "TRENDS",
     date: "September 21, 2025",
     title: "Ear Cuffs: No Piercing Required",
@@ -121,7 +122,7 @@ const BLOG = [
   },
   {
     id: 16,
-    image_url: "https://example.com/jewelry/brooches-16.jpg",
+    image_url: "/images/OlightAllImage/5BlogPage/10042.jpg",
     category: "VINTAGE REVIVAL",
     date: "October 03, 2025",
     title: "Brooches Are the New Power Accessory",
@@ -129,7 +130,7 @@ const BLOG = [
   },
   {
     id: 17,
-    image_url: "https://example.com/jewelry/chains-17.jpg",
+    image_url: "/images/OlightAllImage/5BlogPage/10039.jpg",
     category: "LAYERING",
     date: "October 16, 2025",
     title: "Chain Necklaces: The Foundation of Layering",
@@ -137,7 +138,7 @@ const BLOG = [
   },
   {
     id: 18,
-    image_url: "https://example.com/jewelry/care-18.jpg",
+    image_url: "/images/OlightAllImage/5BlogPage/10036.jpg",
     category: "MAINTENANCE",
     date: "October 29, 2025",
     title: "How to Clean Jewelry at Home",
@@ -145,7 +146,7 @@ const BLOG = [
   },
   {
     id: 19,
-    image_url: "https://example.com/jewelry/gifting-19.jpg",
+    image_url: "/images/OlightAllImage/5BlogPage/10040.jpg",
     category: "GIFT GUIDE",
     date: "November 11, 2025",
     title: "Holiday Jewelry Gifts She’ll Actually Wear",
@@ -153,7 +154,7 @@ const BLOG = [
   },
   {
     id: 20,
-    image_url: "https://example.com/jewelry/anniversary-20.jpg",
+    image_url: "/images/OlightAllImage/5BlogPage/10035.jpg",
     category: "MILESTONES",
     date: "November 20, 2025",
     title: "Anniversary Bands: More Than Just Diamonds",
