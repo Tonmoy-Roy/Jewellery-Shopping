@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 const NavLink = ({
   href,
   children,
-  className = "",
+  className = "mr-10",
   activeClass = "text-primary font-semibold",
   onClick,
 }) => {

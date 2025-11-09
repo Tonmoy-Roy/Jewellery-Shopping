@@ -3,57 +3,57 @@
     {
       name: "Home",
       path: "/",
-      // submenu: [
-      //   { name: "Submenu 1", path: "/categories/submenu-1" },
-      //   { name: "Submenu 2", path: "/categories/submenu-2" },
-      // ],
-    },
-    {
-      name: "Shop",
-      path: "/shop",
-      // submenu: [
-      //   { name: "Submenu 1", path: "/categories/submenu-1" },
-      //   { name: "Submenu 2", path: "/categories/submenu-2" },
-      // ],
-    },
-    {
-      name: "Categories",
-      path: "/categories",
-      // submenu: [
-      //   { name: "Submenu 1", path: "/categories/submenu-1" },
-      //   { name: "Submenu 2", path: "/categories/submenu-2" },
-      // ],
-    },
-    {
-      name: "Products",
-      path: "/ProductDetails",
       submenu: [
-        { name: "Submenu 1", path: "/categories/submenu-1" },
+        { name: "Default", path: "/categories/submenu-1" },
         { name: "Submenu 2", path: "/categories/submenu-2" },
       ],
     },
     {
+      name: "Shop",
+      path: "/shop",
+      submenu: [
+        { name: "Default", path: "/shop" },
+        { name: "Submenu 2", path: "/shop" },
+      ],
+    },
+    {
+      name: "Categories",
+      path: "/categories",
+      submenu: [
+        { name: "Default", path: "/categories" },
+        { name: "Submenu 2", path: "/categories/submenu-2" },
+      ],
+    },
+    // {
+    //   name: "Products",
+    //   path: "/shop",
+    //   submenu: [
+    //     { name: "Default", path: "/shop" },
+    //     { name: "Submenu 2", path: "/categories/submenu-2" },
+    //   ],
+    // },
+    {
       name: "Pages",
       path: "/pages",
-      // submenu: [
-      //   { name: "Submenu 1", path: "/categories/submenu-1" },
-      //   { name: "Submenu 2", path: "/categories/submenu-2" },
-      // ],
+      submenu: [
+        { name: "About Us", path: "/pages" },
+        { name: "FAQ", path: "/faq" },
+      ],
     },
     {
       name: "Blog",
       path: "/blog",
-      // submenu: [
-      //   { name: "Submenu 1", path: "/categories/submenu-1" },
-      //   { name: "Submenu 2", path: "/categories/submenu-2" },
-      // ],
+      submenu: [
+        { name: "Default", path: "/blog" },
+        { name: "Submenu 2", path: "/categories/submenu-2" },
+      ],
     },
     {
       name: "Contact",
       path: "/contact",
-      // submenu: [
-      //   { name: "Submenu 1", path: "/categories/submenu-1" },
-      //   { name: "Submenu 2", path: "/categories/submenu-2" },
-      // ],
+      submenu: [
+        { name: "Default", path: "/contact" },
+        { name: "Submenu 2", path: "/categories/submenu-2" },
+      ],
     },
   ];
