@@ -71,12 +71,12 @@ const page = ({ params }) => {
                         <p>But you can plan for big picture seasonality, busy-times, and events.the main component of a healthy environment for self esteem is that it needs be nurturing. The main compont of a healthy environment for self esteem is that it needs be nurturing. The main component of a healthy env for self esteem The main compont be nurturing It should provide unconditional warmth. The main component of a healthy env for self esteem The main compont be nurturing It should provide unconditional Never ever think of giving up. Never ever think of giving up. Winners never quit and quitters never win. Take all negative words out of your mental dictionary and focus on the solutions with utmost conviction and patience. The battle is never lost until you’ve abandon your vision.
                         </p>
                     </div>
-                    <div className='md:flex mb-10'>
+                    <div className='md:flex mb-10 items-start'>
                         <div className='mr-5'>
-                            <img className='rounded' src="/images/OlightAllImage/10039.jpg" alt="" />
+                            <img className='rounded md:h-[35vh]' src="/images/OlightAllImage/10039.jpg" alt="" />
                         </div>
-                        <div>
-                            <img className='rounded' src="/images/OlightAllImage/10050.jpg" alt="" />
+                        <div >
+                            <img className='rounded md:h-[35vh]' src="/images/OlightAllImage/10050.jpg" alt="" />
                         </div>
                     </div>
                     <div className='mb-10'>
