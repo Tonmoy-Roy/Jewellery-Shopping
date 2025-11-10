@@ -11,6 +11,8 @@ const page = ({ params }) => {
     const { id } = React.use(params);
     const blog = BLOG.find((item) => item.id === Number(id));
     const [searchTerm, setSearchTerm] = useState("");
+    const [selectedCategory, setSelectedCategory] = useState(null);
+
 
 
     if (!blog) {
@@ -154,15 +156,68 @@ const page = ({ params }) => {
                     </div>
                 </div>
                 <div>
-                    <aside className="md:w-[25vw] p-4">
-                        <input
-                            type="text"
-                            placeholder="Search products..."
-                            className="border rounded-md p-3 w-full focus:outline-none focus:ring-2 focus:ring-black mb-5"
-                            value={searchTerm}
-                            onChange={(e) => setSearchTerm(e.target.value)}
-                        />
-                        <Categories />
+                    <aside className="md:w-[25vw] p-4 space-y-8">
+                        {/* Search Bar */}
+                        <div className="relative">
+                            <input
+                                type="text"
+                                placeholder="Search ..."
+                                className="border rounded-md p-3 w-full focus:outline-none focus:ring-2 focus:ring-black mb-2"
+                                value={searchTerm}
+                                onChange={(e) => setSearchTerm(e.target.value)}
+                            />
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="absolute right-3 top-3 h-5 w-5 text-gray-400"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1116.65 16.65z" />
+                            </svg>
+                        </div>
+
+                        {/* Categories */}
+                        <div>
+                            <h3 className="text-lg font-semibold mb-3">Categories</h3>
+                            <ul className="space-y-2 border-t pt-3">
+                                {[...new Set(BLOG.map((b) => b.category))].map((category) => (
+                                    <li
+                                        key={category}
+                                        className={`flex justify-between items-center cursor-pointer hover:text-yellow-600 transition ${category === selectedCategory ? "text-yellow-600 font-medium" : "text-gray-700"
+                                            }`}
+                                        onClick={() => setSelectedCategory(category === selectedCategory ? null : category)}
+                                    >
+                                        <span>{category}</span>
+                                        <span className="text-sm text-gray-500">
+                                            {BLOG.filter((b) => b.category === category).length}
+                                        </span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        {/* Recent Posts */}
+                        <div>
+                            <h3 className="text-lg font-semibold mb-3">Recent Posts</h3>
+                            <div className="space-y-4 border-t pt-3">
+                                {BLOG.slice(0, 4).map((post) => (
+                                    <div key={post.id} className="flex items-center gap-3 hover:bg-gray-50 p-2 rounded-md transition">
+                                        <Image
+                                            src={post.image_url}
+                                            alt={post.title}
+                                            width={60}
+                                            height={60}
+                                            className="rounded-md object-cover"
+                                        />
+                                        <div>
+                                            <p className="text-[11px] text-gray-400 uppercase">{post.date}</p>
+                                            <p className="text-sm font-medium hover:text-yellow-600 cursor-pointer">{post.title}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
                         <Tags></Tags>
                     </aside>
                 </div>
