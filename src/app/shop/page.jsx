@@ -335,7 +335,6 @@ export default function ShopPage() {
               ))}
             </div>
           </div>
-          <div className="border-t mb-5 border-gray-200"></div>
           <Tags></Tags>
         </aside>
 

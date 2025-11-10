@@ -239,7 +239,8 @@ const page = ({ params }) => {
                         {/* Categories */}
                         <div>
                             <h3 className="text-lg font-semibold mb-3">Categories</h3>
-                            <ul className="space-y-2 border-t pt-3">
+                            <div className='border-t border-gray-200'></div>
+                            <ul className="space-y-2 pt-3">
                                 {[...new Set(BLOG.map((b) => b.category))].map((category) => (
                                     <li
                                         key={category}
@@ -260,7 +261,7 @@ const page = ({ params }) => {
                         {/* Recent Posts */}
                         <div>
                             <h3 className="text-lg font-semibold mb-3">Recent Posts</h3>
-                            <div className="space-y-4 border-t pt-3">
+                            <div className="space-y-4 border-t pt-3 border-gray-200">
                                 {BLOG.slice(0, 4).map((post) => (
                                     <div key={post.id} className="flex items-center gap-3 hover:bg-gray-50 p-2 rounded-md transition">
                                         <Image
