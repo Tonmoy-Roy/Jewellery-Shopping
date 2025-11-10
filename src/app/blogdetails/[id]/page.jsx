@@ -272,7 +272,7 @@ const page = ({ params }) => {
                                         />
                                         <div>
                                             <p className="text-[11px] text-gray-400 uppercase">{post.date}</p>
-                                            <p className="text-sm font-medium hover:text-yellow-600 cursor-pointer">{post.title}</p>
+                                            <Link href={`${post.id}`} className="text-sm font-medium hover:text-yellow-600 cursor-pointer">{post.title}</Link>
                                         </div>
                                     </div>
                                 ))}
