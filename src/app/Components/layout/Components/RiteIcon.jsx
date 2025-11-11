@@ -1,5 +1,5 @@
 import React from 'react'
-import ButtonIcon from "@/app/components/common/ButtonIcon";
+import ButtonIcon from "@/app/Components/common/ButtonIcon";
 import { Search, ShoppingBag, Heart, User, Menu,  } from "lucide-react";
 export default function RiteIcon({setOpen, open}) {
   return (
