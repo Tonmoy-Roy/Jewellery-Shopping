@@ -244,7 +244,7 @@ const page = ({ params }) => {
                                 {[...new Set(BLOG.map((b) => b.category))].map((category) => (
                                     <li
                                         key={category}
-                                        className={`flex justify-between items-center cursor-pointer hover:text-yellow-600 transition ${category === selectedCategory ? "text-yellow-600 font-medium" : "text-gray-700"
+                                        className={`font-semibold flex justify-between items-center cursor-pointer hover:text-yellow-600 transition ${category === selectedCategory ? "text-yellow-600 font-medium" : "text-gray-700"
                                             }`}
                                         onClick={() => handleCategoryClick(category)}
 

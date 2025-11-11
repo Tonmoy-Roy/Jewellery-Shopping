@@ -120,7 +120,7 @@ export default function ShopPage() {
           {/* Search */}
           <input
             type="text"
-            placeholder="Search products..."
+            placeholder="Search categories..."
             className="border rounded-md p-3 w-full focus:outline-none focus:ring-2 focus:ring-black mb-5"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -128,12 +128,12 @@ export default function ShopPage() {
 
           {/* Categories */}
           <div className="mb-10">
-            <h3 className="font-semibold mb-3">Categories</h3>
+            <h3 className="font-semibold mb-3 text-lg">Categories</h3>
             <ul className="space-y-2">
               {categoryCountss.map((cat) => (
                 <li
                   key={cat.name}
-                  className={`text-gray-700 hover:text-primary cursor-pointer ${selectedCategory === cat.name ? 'font-semibold text-primary' : ''}`}
+                  className={`font-semibold text-gray-700 hover:text-yellow-600 cursor-pointer ${selectedCategory === cat.name ? 'font-semibold text-primary' : ''}`}
                   onClick={() => setSelectedCategory(cat.name)}
                 >
                   <div className="flex justify-between">
@@ -148,7 +148,7 @@ export default function ShopPage() {
 
           {/* Price Filter */}
           <div className="mb-10">
-            <h3 className="font-semibold mb-3">Filter by Price</h3>
+            <h3 className="font-semibold mb-3 text-lg">Filter by Price</h3>
 
             <div
               ref={sliderRef}
@@ -224,7 +224,7 @@ export default function ShopPage() {
 
           {/* Carats */}
           <div className="mb-6">
-            <h3 className="font-semibold mb-3">Carats</h3>
+            <h3 className="font-semibold mb-3 text-lg">Carats</h3>
             <ul className="space-y-2">
               {["14kt", "18kt", "22kt", "24kt"].map((carat) => {
                 const count = PRODUCTS.filter((p) => p.carats === carat).length;
@@ -270,7 +270,7 @@ export default function ShopPage() {
 
           {/* Brands */}
           <div className="mb-6">
-            <h3 className="font-semibold mb-3">Brands</h3>
+            <h3 className="font-semibold mb-3 text-lg">Brands</h3>
             <ul className="space-y-2">
               {(filteredBrands.length > 0
                 ? filteredBrands
@@ -324,7 +324,7 @@ export default function ShopPage() {
 
           {/* Colors */}
           <div className="mb-6">
-            <h3 className="font-semibold mb-3">Color</h3>
+            <h3 className="font-semibold mb-3 text-lg">Color</h3>
             <div className="flex flex-wrap gap-2">
               {["#000000", "#E5E7EB", "#FCD34D", "#F87171", "#60A5FA"].map((c) => (
                 <div
