@@ -11,7 +11,7 @@ const page = () => {
         <div className='px-15'>
             <div className="w-screen relative left-1/2 -ml-[51vw] mb-20">
                 <Coverimg1
-                    imagePath="/images/OlightAllImage/4ProductPage/7.jpg"
+                    imagePath="/images/OlightAllImage/4ProductPage/1.jpg"
                     title={
                         <>
                             Introducing <br />

@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { MapPin, Phone, Clock } from "lucide-react";
-import stores from "../constants/stores"
+import stores from "../constants/stores";
 import Footer from "../Components/layout/Footer";
 import Coverimg1 from "../Components/common/Coverimg1";
 
@@ -29,7 +29,7 @@ export default function page() {
         <section className="max-w-6xl mx-auto px-6">
             <div className="w-screen relative left-1/2 -ml-[51vw] mb-20">
                 <Coverimg1
-                    imagePath="/images/OlightAllImage/4ProductPage/7.jpg"
+                    imagePath="/images/OlightAllImage/4ProductPage/1.jpg"
                     title={
                         <>
                             Introducing <br />

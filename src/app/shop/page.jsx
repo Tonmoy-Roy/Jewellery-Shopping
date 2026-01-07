@@ -101,8 +101,6 @@ export default function ShopPage() {
     }
   };
 
-
-
   return (
     <section className="md:px-15">
       {/* 🔹 Page Header */}

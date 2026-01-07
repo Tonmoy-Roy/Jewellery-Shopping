@@ -12,6 +12,7 @@ const Coverimg1 = ({ imagePath, title, breadcrumb }) => {
                     priority
                     className="absolute inset-0 object-cover"
                 />
+                <div className="absolute inset-0 bg-black/30"></div>
                 {/* Text Content */}
                 <div className="relative ml-5 z-10 text-white md:w-[41vw] text-center">
                     <h1 className="text-2xl md:text-3xl font-semibold mt-3 mb-5">{title}</h1>
