@@ -12,10 +12,8 @@ const Navbar = () => {
   console.log("FULL NAV_LINKS DATA: ", NAV_LINKS);
 
   const renderMenuItem = (link) => {
-    // STRICT CHECK: Verify submenu is an Array AND has items
     const hasSubmenu = Array.isArray(link.submenu) && link.submenu.length > 0;
 
-    // DEBUGGER: This will print in your browser console so we can see what's happening
     console.log(`Checking link: ${link.name} | Has Submenu? ${hasSubmenu}`);
 
     return hasSubmenu ? (
@@ -28,7 +26,6 @@ const Navbar = () => {
             className="hover:text-primary flex items-center transition-colors duration-300"
           >
             <p className="mr-1 mb-1">{link.name}</p>
-            {/* Animated Arrow - Flips 180 degrees on hover */}
             <Image
               src={submenuIcon}
               alt="Dropdown Arrow"
@@ -37,16 +34,12 @@ const Navbar = () => {
           </NavLink>
         </div>
 
-        {/* 
-      Dropdown Container
-      - Uses 'pt-4' (padding-top) as an invisible bridge so the mouse doesn't lose hover
-      - Animates opacity (fade in) and translation (slides up into place)
-    */}
-        <div className="absolute top-[100%] left-0 pt-4 z-[9999] opacity-0 invisible translate-y-4 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 ease-out">
+
+        {/* Dropdown Container */}
+        <div className="absolute top-[100%] left-0 pt-4 z-[9999] opacity-0 invisible translate-y-4 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 ease-out bg-transparent">
           <ul
             className="w-48 bg-base-100 shadow-[0_10px_30px_rgba(0,0,0,0.08)] rounded-xl border border-gray-100 p-2 relative"
           >
-            {/* Optional decorative pointer arrow on top of the box */}
             <div className="absolute -top-2 left-6 w-4 h-4 bg-base-100 border-t border-l border-gray-100 rotate-45 z-[-1]"></div>
 
             {link.submenu.map((sub) => (
@@ -54,8 +47,7 @@ const Navbar = () => {
                 <NavLink
                   href={sub.path}
                   onClick={() => setOpen(false)}
-                  // Dynamic Item Hover - slides right slightly and adds background highlight
-                  className="block px-4 py-2 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg transition-all duration-200 hover:translate-x-1.5"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:text-primary  rounded-lg transition-all duration-200 hover:translate-x-1.5"
                 >
                   {sub.name}
                 </NavLink>
