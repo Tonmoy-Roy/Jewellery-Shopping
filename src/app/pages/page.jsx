@@ -70,7 +70,6 @@ const page = () => {
             <div>
                 <ClientSection></ClientSection>
             </div>
-            <Footer></Footer>
         </div>
     );
 };

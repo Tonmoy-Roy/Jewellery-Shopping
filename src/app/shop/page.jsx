@@ -395,9 +395,6 @@ export default function ShopPage() {
 
         </main>
       </div>
-
-      <Footer></Footer>
-
     </section>
   );
 }

@@ -18,7 +18,6 @@ export default function LatestShop() {
           <Content />
         </div>
       </section>
-      <Footer></Footer>
     </div>
   );
 }

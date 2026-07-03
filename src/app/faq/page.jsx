@@ -60,7 +60,6 @@ export default function page() {
                     />
                 ))}
             </div>
-            <Footer></Footer>
         </div>
     );
 }

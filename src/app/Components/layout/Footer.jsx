@@ -28,8 +28,8 @@ const Footer = () => {
                     <button
                         disabled={!agree || !email}
                         className={`px-5 py-2 rounded-md text-white ${agree && email
-                                ? "bg-black hover:bg-gray-800"
-                                : "bg-gray-400 cursor-not-allowed"
+                            ? "bg-black hover:bg-gray-800"
+                            : "bg-gray-400 cursor-not-allowed"
                             }`}
                     >
                         Subscribe
@@ -51,7 +51,7 @@ const Footer = () => {
             </div>
 
             {/* Footer Links Section */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-10 px-8 md:px-16">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-10 px-8 md:px-16 justify-items-center">
                 {/* Logo + About */}
                 <div>
                     <div className="flex">

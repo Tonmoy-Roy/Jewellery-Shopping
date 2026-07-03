@@ -6,7 +6,6 @@ import Designers from "./Components/sections/Designers/Designers";
 import FeaturesSection from "./Components/sections/Features/FeaturesSection";
 import LatestShop from "./Components/sections/latestShop/LatestShop";
 import LuxuryNecklace from "./Components/sections/LuxuryNecklace/LuxuryNecklace";
-// import Sellers from "./Components/sections/sellers/Sellers";
 import WeekProducts from "./Components/sections/WeekProducts/WeekProducts";
 
 export default function Home() {
@@ -15,7 +14,6 @@ export default function Home() {
       <JewelryHomepage />
       <FeaturesSection />
       <Designers />
-      {/* <Sellers/> */}
       <CollectionBanner/>
       <WeekProducts/>
       <LuxuryNecklace/>

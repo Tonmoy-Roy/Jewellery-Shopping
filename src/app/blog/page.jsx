@@ -66,7 +66,6 @@ const page = () => {
                     </button>
                 </div>
             </div>
-            <Footer></Footer>
         </div>
     );
 };

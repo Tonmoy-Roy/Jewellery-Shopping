@@ -4,7 +4,7 @@ import Footer from '../Components/layout/Footer';
 const page = () => {
     return (
         <div>
-            <Footer></Footer>
+            
         </div>
     );
 };
