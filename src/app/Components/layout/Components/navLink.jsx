@@ -4,12 +4,12 @@
       path: "/",
     },
     {
-      name: "Shop",
-      path: "/shop",
-    },
-    {
       name: "Categories",
       path: "/categories",
+    },
+    {
+      name: "Shop",
+      path: "/shop",
     },
 
     {
